@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Data Scatter Plot</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        .axis path,
+        .axis line {
+            fill: none;
+            shape-rendering: crispEdges;
+        }
+
+        .axis text {
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Diagrama de Dispersión de Iris usando D3.js</h2>
+    <div id="chart"></div>
+
+    <script>
+        // Cargar datos desde un archivo externo
+        d3.text("../aplicacion/iris.txt").then(text => {
+            console.log('Datos cargados:', text);
+            const parsedData = text.split("\n").map(row => {
+                const [sepalLength, sepalWidth, petalLength, petalWidth, species] = row.split(",");
+                return {
+                    sepalLength: parseFloat(sepalLength),
+                    sepalWidth: parseFloat(sepalWidth),
+                    petalLength: parseFloat(petalLength),
+                    petalWidth: parseFloat(petalWidth),
+                    species
+                };
+            });
+
+            console.log('Datos parseados:', parsedData);
+
+            // Dimensiones del SVG
+            const margin = { top: 20, right: 30, bottom: 50, left: 50 },
+                width = 800 - margin.left - margin.right,
+                height = 500 - margin.top - margin.bottom;
+
+            // Crear el contenedor SVG
+            const svg = d3.select("#chart")
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            // Escalas
+            const x = d3.scaleLinear()
+                .domain(d3.extent(parsedData, d => d.sepalLength))
+                .range([0, width]);
+
+            const y = d3.scaleLinear()
+                .domain(d3.extent(parsedData, d => d.sepalWidth))
+                .range([height, 0]);
+
+            // Ejes
+            const xAxis = d3.axisBottom(x);
+            const yAxis = d3.axisLeft(y);
+
+            svg.append("g")
+                .attr("transform", `translate(0,${height})`)
+                .call(xAxis);
+
+            svg.append("g")
+                .call(yAxis);
+
+            // Crear puntos para el diagrama de dispersión
+            svg.selectAll(".dot")
+                .data(parsedData)
+                .enter()
+                .append("circle")
+                .attr("cx", d => x(d.sepalLength))
+                .attr("cy", d => y(d.sepalWidth))
+                .attr("r", 5)
+                .attr("fill", d => {
+                    if (d.species === "Iris-setosa") return "red";
+                    else if (d.species === "Iris-versicolor") return "green";
+                    else return "blue";
+                })
+                .attr("opacity", 0.7);
+
+            // Etiquetas para los ejes
+            svg.append("text")
+                .attr("x", width / 2)
+                .attr("y", height + margin.bottom - 10)
+                .style("text-anchor", "middle")
+                .text("Largo del Sépalo (cm)");
+
+            svg.append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", -margin.left + 15)
+                .attr("x", -height / 2)
+                .style("text-anchor", "middle")
+                .text("Ancho del Sépalo (cm)");
+        }).catch(error => {
+            console.error('Error al cargar el archivo:', error);
+        });
+    </script>
+</body>
+</html>
