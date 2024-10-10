@@ -41,3 +41,12 @@ https://marketplace.visualstudio.com/items/yoyo.D3Snippets
 | Trigger  | Content |
 | -------: | ------- |
 | `af→`   | Anonymous Function|
+
+
+para levantar ejecutar el comando:
+python -m http.server 8000
+
+luego ver en el explorador 
+http://localhost:8000/aplicacion/ejemplo.html
+
+
