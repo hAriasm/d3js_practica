@@ -92,9 +92,9 @@
                 .attr("width", d => xBar(d.count))
                 .attr("height", yBar.bandwidth())
                 .attr("fill", d => {
-                    if (d.species === "Iris-setosa") return "red";
-                    else if (d.species === "Iris-versicolor") return "green";
-                    else return "blue";
+                    if (d.species === "Iris-setosa") return "#ff6347"; // Tomato (rojo)
+                    else if (d.species === "Iris-versicolor") return "#32cd32"; // LimeGreen (verde)
+                    else return "#4682b4"; // SteelBlue (azul)
                 });
 
             // Etiquetas de las barras
@@ -229,7 +229,7 @@
                 .attr("transform", d => `translate(${xHistogram(d.x0)}, ${yHistogram(d.length)})`)
                 .attr("width", d => xHistogram(d.x1) - xHistogram(d.x0) - 1)
                 .attr("height", d => histogramHeight - yHistogram(d.length))
-                .style("fill", "steelblue");
+                .style("fill", "#4682b4"); // SteelBlue (azul)
 
             // Etiquetas para el histograma
             histogramSvg.append("text")
@@ -268,9 +268,9 @@
                 .append("path")
                 .attr("d", arc)
                 .attr("fill", d => {
-                    if (d.data.species === "Iris-setosa") return "red";
-                    else if (d.data.species === "Iris-versicolor") return "green";
-                    else return "blue";
+                    if (d.data.species === "Iris-setosa") return "#ff6347"; // Tomato (rojo)
+                    else if (d.data.species === "Iris-versicolor") return "#32cd32"; // LimeGreen (verde)
+                    else return "#4682b4"; // SteelBlue (azul)
                 })
                 .attr("stroke", "white")
                 .attr("stroke-width", "2px");
