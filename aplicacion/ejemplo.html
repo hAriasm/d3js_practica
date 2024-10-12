@@ -172,7 +172,7 @@
                 })
                 .attr("opacity", 0.7);
 
-            // Etiquetas para los ejes, estamos modificando
+            // Etiquetas para los ejes
             svg.append("text")
                 .attr("x", width / 2)
                 .attr("y", height + margin.bottom - 10)
@@ -237,12 +237,14 @@
                 .attr("y", histogramHeight + histogramMargin.bottom - 10)
                 .style("text-anchor", "middle")
                 .text("Largo del Sépalo (cm)");
+
             histogramSvg.append("text")
                 .attr("transform", "rotate(-90)")
                 .attr("y", -histogramMargin.left + 15)
                 .attr("x", -histogramHeight / 2)
                 .style("text-anchor", "middle")
                 .text("Frecuencia");
+
             // Crear gráfico de pastel para mostrar la distribución de especies
             const pieWidth = 450, pieHeight = 450, pieRadius = Math.min(pieWidth, pieHeight) / 2;
 
@@ -272,6 +274,7 @@
                 })
                 .attr("stroke", "white")
                 .attr("stroke-width", "2px");
+
             // Etiquetas para el gráfico de pastel
             pieSvg.selectAll("text")
                 .data(pie(speciesData))
@@ -281,6 +284,8 @@
                 .attr("transform", d => `translate(${arc.centroid(d)})`)
                 .style("text-anchor", "middle")
                 .style("font-size", "12px");
+
+            
 
             features.forEach((featureX, i) => {
                 features.forEach((featureY, j) => {
@@ -321,4 +326,4 @@
         });
     </script>
 </body>
-</html>   
+</html>
