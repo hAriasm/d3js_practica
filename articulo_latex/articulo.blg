@@ -9,7 +9,6 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Database file #1: referencias.bib
 Warning--I didn't find a database entry for "prisma2009"
-Warning--I didn't find a database entry for "casp2018"
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'glb_str_end' (item size: 4) to 20 items.
 Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
@@ -43,7 +42,7 @@ Warning--no number and no volume in zhang2019visual
 Warning--page numbers missing in both pages and numpages fields in zhang2019visual
 You've used 13 entries,
             5981 wiz_defined-function locations,
-            1522 strings with 19430 characters,
+            1521 strings with 19422 characters,
 and the built_in function-call counts, 13336 in all, are:
 = -- 2148
 > -- 389
@@ -82,4 +81,4 @@ warning$ -- 26
 while$ -- 83
 width$ -- 0
 write$ -- 273
-(There were 28 warnings)
+(There were 27 warnings)
