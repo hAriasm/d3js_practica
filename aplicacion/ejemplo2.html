@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Data Visualizations</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        .axis path,
+        .axis line {
+            fill: none;
+            shape-rendering: crispEdges;
+        }
+
+        .axis text {
+            font-size: 12px;
+        }
+
+        .bar-label {
+            font-size: 14px;
+            fill: black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Diagrama de Dispersión de Iris usando D3.js</h2>
+    <div id="chart"></div>
+    
+    <h2>Histograma del Largo del Sépalo</h2>
+    <div id="histogram"></div>
+    
+    <h2>Histograma del Ancho del Sépalo</h2>
+    <div id="histogramSepalWidth"></div>
+    
+    <h2>Histograma del Largo del Pétalo</h2>
+    <div id="histogramPetalLength"></div>
+    
+    <h2>Histograma del Ancho del Pétalo</h2>
+    <div id="histogramPetalWidth"></div>
+    
+    <h2>Gráfico de Pastel de las Especies de Iris</h2>
+    <div id="piechart"></div>
+    
+    <h2>Gráfico de Barras de la Cantidad de Especies de Iris</h2>
+    <div id="barchart"></div>
+
+    <script>
+        // Cargar datos desde un archivo externo
+        d3.text("../aplicacion/iris.txt").then(text => {
+            console.log('Datos cargados:', text);
+            const parsedData = text.split("\r\n").map(row => {
+                const [sepalLength, sepalWidth, petalLength, petalWidth, species] = row.split(",");
+                return {
+                    sepalLength: parseFloat(sepalLength),
+                    sepalWidth: parseFloat(sepalWidth),
+                    petalLength: parseFloat(petalLength),
+                    petalWidth: parseFloat(petalWidth),
+                    species
+                };
+            });
+
+            console.log('Datos parseados:', parsedData);
+
+            // Crear gráfico de barras para la cantidad de cada especie
+            const speciesCounts = d3.rollup(parsedData, v => v.length, d => d.species);
+            const speciesData = Array.from(speciesCounts, ([species, count]) => ({ species, count }));
+
+            const barMargin = { top: 20, right: 30, bottom: 50, left: 100 },
+                barWidth = 600 - barMargin.left - barMargin.right,
+                barHeight = 400 - barMargin.top - barMargin.bottom;
+
+            const barSvg = d3.select("#barchart")
+                .append("svg")
+                .attr("width", barWidth + barMargin.left + barMargin.right)
+                .attr("height", barHeight + barMargin.top + barMargin.bottom)
+                .append("g")
+                .attr("transform", `translate(${barMargin.left},${barMargin.top})`);
+
+            const xBar = d3.scaleLinear()
+                .domain([0, d3.max(speciesData, d => d.count)])
+                .range([0, barWidth]);
+
+            const yBar = d3.scaleBand()
+                .domain(speciesData.map(d => d.species))
+                .range([0, barHeight])
+                .padding(0.1);
+
+            // Ejes
+            barSvg.append("g")
+                .call(d3.axisLeft(yBar));
+
+            barSvg.append("g")
+                .attr("transform", `translate(0,${barHeight})`)
+                .call(d3.axisBottom(xBar).ticks(5));
+
+            // Barras
+            barSvg.selectAll(".bar")
+                .data(speciesData)
+                .enter()
+                .append("rect")
+                .attr("class", "bar")
+                .attr("y", d => yBar(d.species))
+                .attr("width", d => xBar(d.count))
+                .attr("height", yBar.bandwidth())
+                .attr("fill", d => {
+                    if (d.species === "Iris-setosa") return "#ff6347"; // Tomato (rojo)
+                    else if (d.species === "Iris-versicolor") return "#32cd32"; // LimeGreen (verde)
+                    else return "#4682b4"; // SteelBlue (azul)
+                });
+
+            // Etiquetas de las barras
+            barSvg.selectAll(".bar-label")
+                .data(speciesData)
+                .enter()
+                .append("text")
+                .attr("class", "bar-label")
+                .attr("x", d => xBar(d.count) + 5)
+                .attr("y", d => yBar(d.species) + yBar.bandwidth() / 2)
+                .attr("dy", ".35em")
+                .text(d => d.count);
+
+            // Crear gráfico de dispersión para las primeras dos variables (SepalLengthCm y SepalWidthCm)
+            const scatterMargin = { top: 20, right: 20, bottom: 40, left: 60 },
+                scatterWidth = 600 - scatterMargin.left - scatterMargin.right,
+                scatterHeight = 400 - scatterMargin.top - scatterMargin.bottom;
+
+            const scatterSvg = d3.select("#chart")
+                .append("svg")
+                .attr("width", scatterWidth + scatterMargin.left + scatterMargin.right)
+                .attr("height", scatterHeight + scatterMargin.top + scatterMargin.bottom)
+                .append("g")
+                .attr("transform", `translate(${scatterMargin.left},${scatterMargin.top})`);
+
+            const xScatter = d3.scaleLinear()
+                .domain([d3.min(parsedData, d => d.sepalLength) - 0.5, d3.max(parsedData, d => d.sepalLength) + 0.5])
+                .range([0, scatterWidth]);
+
+            const yScatter = d3.scaleLinear()
+                .domain([d3.min(parsedData, d => d.sepalWidth) - 0.5, d3.max(parsedData, d => d.sepalWidth) + 0.5])
+                .range([scatterHeight, 0]);
+
+            // Ejes del gráfico de dispersión
+            scatterSvg.append("g")
+                .attr("transform", `translate(0,${scatterHeight})`)
+                .call(d3.axisBottom(xScatter));
+
+            scatterSvg.append("g")
+                .call(d3.axisLeft(yScatter));
+
+            // Puntos del gráfico de dispersión
+            scatterSvg.selectAll("dot")
+                .data(parsedData)
+                .enter()
+                .append("circle")
+                .attr("cx", d => xScatter(d.sepalLength))
+                .attr("cy", d => yScatter(d.sepalWidth))
+                .attr("r", 5)
+                .attr("fill", d => {
+                    if (d.species === "Iris-setosa") return "#ff6347";
+                    else if (d.species === "Iris-versicolor") return "#32cd32";
+                    else return "#4682b4";
+                })
+                .attr("opacity", 0.7);
+
+            // Etiqueta del eje X
+            scatterSvg.append("text")
+                .attr("transform", `translate(${scatterWidth / 2},${scatterHeight + scatterMargin.bottom - 5})`)
+                .attr("text-anchor", "middle")
+                .style("font-size", "14px")
+                .text("Largo del Sépalo (cm)");
+
+            // Etiqueta del eje Y
+            scatterSvg.append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 0 - scatterMargin.left + 15)
+                .attr("x", 0 - (scatterHeight / 2))
+                .attr("text-anchor", "middle")
+                .style("font-size", "14px")
+                .text("Ancho del Sépalo (cm)");
+
+            // Crear gráfico de pastel de las especies de Iris
+            const pieMargin = { top: 20, right: 20, bottom: 20, left: 20 },
+                pieWidth = 400 - pieMargin.left - pieMargin.right,
+                pieHeight = 400 - pieMargin.top - pieMargin.bottom,
+                radius = Math.min(pieWidth, pieHeight) / 2;
+
+            const pieSvg = d3.select("#piechart")
+                .append("svg")
+                .attr("width", pieWidth + pieMargin.left + pieMargin.right)
+                .attr("height", pieHeight + pieMargin.top + pieMargin.bottom)
+                .append("g")
+                .attr("transform", `translate(${(pieWidth + pieMargin.left) / 2},${(pieHeight + pieMargin.top) / 2})`);
+
+            const pie = d3.pie()
+                .value(d => d.count);
+
+            const arc = d3.arc()
+                .outerRadius(radius - 10)
+                .innerRadius(0);
+
+            const labelArc = d3.arc()
+                .outerRadius(radius)
+                .innerRadius(radius - 80);
+
+            const pieData = pie(speciesData);
+
+            const g = pieSvg.selectAll(".arc")
+                .data(pieData)
+                .enter().append("g")
+                .attr("class", "arc");
+
+            g.append("path")
+                .attr("d", arc)
+                .style("fill", d => {
+                    if (d.data.species === "Iris-setosa") return "#ff6347";
+                    else if (d.data.species === "Iris-versicolor") return "#32cd32";
+                    else return "#4682b4";
+                });
+
+            g.append("text")
+                .attr("transform", d => `translate(${labelArc.centroid(d)})`)
+                .attr("dy", ".35em")
+                .text(d => d.data.species);
+
+            // Crear histogramas para las variables
+            const histMargin = { top: 20, right: 20, bottom: 30, left: 50 },
+                histWidth = 500 - histMargin.left - histMargin.right,
+                histHeight = 300 - histMargin.top - histMargin.bottom;
+
+            // Función para crear histogramas
+            function createHistogram(selector, data, xLabel) {
+                const xHist = d3.scaleLinear()
+                    .domain([d3.min(data) - 0.5, d3.max(data) + 0.5])
+                    .range([0, histWidth]);
+
+                const histogram = d3.histogram()
+                    .domain(xHist.domain())
+                    .thresholds(xHist.ticks(10));
+
+                const bins = histogram(data);
+
+                const yHist = d3.scaleLinear()
+                    .domain([0, d3.max(bins, d => d.length)])
+                    .range([histHeight, 0]);
+
+                const svgHist = d3.select(selector)
+                    .append("svg")
+                    .attr("width", histWidth + histMargin.left + histMargin.right)
+                    .attr("height", histHeight + histMargin.top + histMargin.bottom)
+                    .append("g")
+                    .attr("transform", `translate(${histMargin.left},${histMargin.top})`);
+
+                svgHist.append("g")
+                    .attr("transform", `translate(0,${histHeight})`)
+                    .call(d3.axisBottom(xHist));
+
+                svgHist.append("g")
+                    .call(d3.axisLeft(yHist));
+
+                svgHist.selectAll("rect")
+                    .data(bins)
+                    .enter()
+                    .append("rect")
+                    .attr("x", d => xHist(d.x0))
+                    .attr("y", d => yHist(d.length))
+                    .attr("width", d => xHist(d.x1) - xHist(d.x0) - 1)
+                    .attr("height", d => histHeight - yHist(d.length))
+                    .attr("fill", "#4682b4"); // Azul
+
+                // Etiqueta del eje X
+                svgHist.append("text")
+                    .attr("x", histWidth / 2)
+                    .attr("y", histHeight + histMargin.bottom)
+                    .attr("text-anchor", "middle")
+                    .text(xLabel);
+            }
+
+            // Histograma de SepalLengthCm
+            createHistogram("#histogram", parsedData.map(d => d.sepalLength), "Largo del Sépalo");
+
+            // Histograma de SepalWidthCm
+            createHistogram("#histogramSepalWidth", parsedData.map(d => d.sepalWidth), "Ancho del Sépalo");
+
+            // Histograma de PetalLengthCm
+            createHistogram("#histogramPetalLength", parsedData.map(d => d.petalLength), "Largo del Pétalo");
+
+            // Histograma de PetalWidthCm
+            createHistogram("#histogramPetalWidth", parsedData.map(d => d.petalWidth), "Ancho del Pétalo");
+        });
+    </script>
+</body>
+</html>
