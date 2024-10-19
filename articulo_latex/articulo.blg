@@ -1,0 +1,83 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: articulo.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+The style file: ACM-Reference-Format.bst
+Reallocating 'name_of_file' (item size: 1) to 12 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Database file #1: referencias.bib
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Warning--no number and no volume in afzal2011visual
+Warning--page numbers missing in both pages and numpages fields in afzal2011visual
+Warning--no number and no volume in du2021dynamics
+Warning--page numbers missing in both pages and numpages fields in du2021dynamics
+Warning--no number and no volume in kim2024scoping
+Warning--page numbers missing in both pages and numpages fields in kim2024scoping
+Warning--no number and no volume in li2024vivian
+Warning--page numbers missing in both pages and numpages fields in li2024vivian
+Warning--no number and no volume in li2021odt
+Warning--page numbers missing in both pages and numpages fields in li2021odt
+Warning--no number and no volume in luo2016geo
+Warning--page numbers missing in both pages and numpages fields in luo2016geo
+Warning--no number and no volume in pappalardo2023dataset
+Warning--page numbers missing in both pages and numpages fields in pappalardo2023dataset
+Warning--no number and no volume in wei2020spread
+Warning--page numbers missing in both pages and numpages fields in wei2020spread
+Warning--no number and no volume in wu2024patterns
+Warning--page numbers missing in both pages and numpages fields in wu2024patterns
+Warning--no number and no volume in yang2022epimob
+Warning--page numbers missing in both pages and numpages fields in yang2022epimob
+Warning--no number and no volume in yanez2021pandemcap
+Warning--page numbers missing in both pages and numpages fields in yanez2021pandemcap
+Warning--no number and no volume in zhang2023data
+Warning--page numbers missing in both pages and numpages fields in zhang2023data
+Warning--no number and no volume in zhang2019visual
+Warning--page numbers missing in both pages and numpages fields in zhang2019visual
+You've used 15 entries,
+            5981 wiz_defined-function locations,
+            1533 strings with 19794 characters,
+and the built_in function-call counts, 15341 in all, are:
+= -- 2438
+> -- 445
+< -- 0
++ -- 153
+- -- 184
+* -- 954
+:= -- 1419
+add.period$ -- 76
+call.type$ -- 15
+change.case$ -- 92
+chr.to.int$ -- 15
+cite$ -- 41
+duplicate$ -- 1243
+empty$ -- 899
+format.name$ -- 236
+if$ -- 4047
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 56
+newline$ -- 165
+num.names$ -- 105
+pop$ -- 537
+preamble$ -- 1
+purify$ -- 212
+quote$ -- 0
+skip$ -- 395
+stack$ -- 0
+substring$ -- 844
+swap$ -- 76
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 254
+warning$ -- 26
+while$ -- 94
+width$ -- 0
+write$ -- 316
+(There were 26 warnings)
