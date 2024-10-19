@@ -1,0 +1,196 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{15}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Afzal and etc.(2011)]%
+        {afzal2011visual}
+\bibfield{author}{\bibinfo{person}{Shehzad Afzal} {and} \bibinfo{person}{etc.}}
+  \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Visual Analytics Decision Support Environment for
+  Epidemic Modeling and Response Evaluation}.
+\newblock \bibinfo{journal}{\emph{Journal Name}} (\bibinfo{year}{2011}).
+\newblock
+
+
+\bibitem[{Critical Appraisal Skills Programme (CASP)}(2018)]%
+        {casp2018}
+\bibfield{author}{\bibinfo{person}{{Critical Appraisal Skills Programme
+  (CASP)}}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \bibinfo{title}{CASP Checklists}.
+\newblock
+  \bibinfo{howpublished}{\url{https://casp-uk.net/casp-tools-checklists/}}.
+\newblock
+\newblock
+\shownote{Accedido el 18 de octubre de 2024}.
+
+
+\bibitem[Du and etc.(2021)]%
+        {du2021dynamics}
+\bibfield{author}{\bibinfo{person}{Bowen Du} {and} \bibinfo{person}{etc.}}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Modelling the Epidemic Dynamics of COVID-19 with
+  Consideration of Human Mobility}.
+\newblock \bibinfo{journal}{\emph{Journal Name}} (\bibinfo{year}{2021}).
+\newblock
+
+
+\bibitem[Kim and Cánovas(2024)]%
+        {kim2024scoping}
+\bibfield{author}{\bibinfo{person}{Denisse Kim} {and} \bibinfo{person}{Bernardo
+  Cánovas}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Visualization of Spatial–Temporal Epidemiological
+  Data: A Scoping Review}.
+\newblock \bibinfo{journal}{\emph{Journal Name}} (\bibinfo{year}{2024}).
+\newblock
+
+
+\bibitem[Li and etc.(2024)]%
+        {li2024vivian}
+\bibfield{author}{\bibinfo{person}{Guojun Li} {and} \bibinfo{person}{etc.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{VIVIAN: Virtual Simulation and Visual Analysis of
+  Epidemic Spread Data}.
+\newblock \bibinfo{journal}{\emph{Journal Name}} (\bibinfo{year}{2024}).
+\newblock
+
+
+\bibitem[Li and etc.(2021)]%
+        {li2021odt}
+\bibfield{author}{\bibinfo{person}{Zhenlong Li} {and} \bibinfo{person}{etc.}}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{ODT FLOW: Extracting, Analyzing, and Sharing
+  Multi-Source Multi-Scale Human Mobility}.
+\newblock \bibinfo{journal}{\emph{Journal Name}} (\bibinfo{year}{2021}).
+\newblock
+
+
+\bibitem[Luo(2016)]%
+        {luo2016geo}
+\bibfield{author}{\bibinfo{person}{Wei Luo}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Visual Analytics of Geo-Social Interaction Patterns
+  for Epidemic Control}.
+\newblock \bibinfo{journal}{\emph{Journal Name}} (\bibinfo{year}{2016}).
+\newblock
+
+
+\bibitem[Moher et~al\mbox{.}(2009)]%
+        {prisma2009}
+\bibfield{author}{\bibinfo{person}{David Moher}, \bibinfo{person}{Alessandro
+  Liberati}, \bibinfo{person}{Jennifer Tetzlaff}, {and}
+  \bibinfo{person}{Douglas~G. Altman}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Preferred reporting items for systematic reviews
+  and meta-analyses: the PRISMA statement}.
+\newblock \bibinfo{journal}{\emph{PLoS Medicine}} \bibinfo{volume}{6},
+  \bibinfo{number}{7} (\bibinfo{year}{2009}), \bibinfo{pages}{e1000097}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1371/journal.pmed.1000097}
+\showDOI{\tempurl}
+
+
+\bibitem[Pappalardo and etc.(2023)]%
+        {pappalardo2023dataset}
+\bibfield{author}{\bibinfo{person}{Luca Pappalardo} {and}
+  \bibinfo{person}{etc.}} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{A Dataset to Assess Mobility Changes in Chile
+  Following Local Quarantines}.
+\newblock \bibinfo{journal}{\emph{Journal Name}} (\bibinfo{year}{2023}).
+\newblock
+
+
+\bibitem[Wei and etc.(2020)]%
+        {wei2020spread}
+\bibfield{author}{\bibinfo{person}{Ye Wei} {and} \bibinfo{person}{etc.}}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Spread of COVID-19 in China: Analysis from a
+  City-Based Epidemic and Mobility Model}.
+\newblock \bibinfo{journal}{\emph{Journal Name}} (\bibinfo{year}{2020}).
+\newblock
+
+
+\bibitem[Wu and etc.(2024)]%
+        {wu2024patterns}
+\bibfield{author}{\bibinfo{person}{Junqi Wu} {and} \bibinfo{person}{etc.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Understanding Epidemic Spread Patterns: A Visual
+  Analysis Approach}.
+\newblock \bibinfo{journal}{\emph{Journal Name}} (\bibinfo{year}{2024}).
+\newblock
+
+
+\bibitem[Yang et~al\mbox{.}(2022)]%
+        {yang2022epimob}
+\bibfield{author}{\bibinfo{person}{Chuang Yang}, \bibinfo{person}{Zhiwen
+  Zhang}, {and} \bibinfo{person}{etc.}} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{EpiMob: Interactive Visual Analytics of Citywide
+  Human Mobility Restrictions for Epidemic Control}.
+\newblock \bibinfo{journal}{\emph{Journal Name}} (\bibinfo{year}{2022}).
+\newblock
+
+
+\bibitem[Yáñez and etc.(2021)]%
+        {yanez2021pandemcap}
+\bibfield{author}{\bibinfo{person}{Andrea Yáñez} {and}
+  \bibinfo{person}{etc.}} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{PandemCap: Decision Support Tool for Epidemic
+  Management}.
+\newblock \bibinfo{journal}{\emph{Journal Name}} (\bibinfo{year}{2021}).
+\newblock
+
+
+\bibitem[Zhang et~al\mbox{.}(2023)]%
+        {zhang2023data}
+\bibfield{author}{\bibinfo{person}{Die Zhang}, \bibinfo{person}{Yong Ge}, {and}
+  \bibinfo{person}{etc.}} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Data-Driven Models Informed by Spatiotemporal
+  Mobility Patterns for Understanding Infectious Disease Dynamics}.
+\newblock \bibinfo{journal}{\emph{Journal Name}} (\bibinfo{year}{2023}).
+\newblock
+
+
+\bibitem[Zhang and etc.(2019)]%
+        {zhang2019visual}
+\bibfield{author}{\bibinfo{person}{Lanyun Zhang} {and} \bibinfo{person}{etc.}}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Visual Analysis of Correlation Between Diseases
+  Evolution and Human Dynamics}.
+\newblock \bibinfo{journal}{\emph{Journal Name}} (\bibinfo{year}{2019}).
+\newblock
+
+
+\end{thebibliography}

@@ -1,4 +1,6 @@
 \documentclass[sigconf]{acmart}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows, positioning}
 
 \title{Análisis Visual de la Dinámica Espacio-Temporal de Epidemias: Una Perspectiva Basada en Movilidad Humana}
 
@@ -99,20 +101,49 @@ Limitaciones identificadas
 Se utilizó la herramienta CASP (Critical Appraisal Skills Programme) para evaluar la calidad y el riesgo de sesgo de los estudios incluidos \cite{casp2018}.
 
 \section{Resultados}
-Nuestros resultados indican que las regiones con alta movilidad interregional presentan mayores tasas de infección durante los primeros estadios de la epidemia. La visualización de estos patrones permitió identificar áreas críticas donde las intervenciones tempranas podrían reducir significativamente la propagación de la enfermedad.
+\subsection{Diagrama de Flujo (PRISMA)}
+El proceso de selección de estudios se ilustra en la Figura , donde se muestra el número de estudios identificados, excluidos y finalmente incluidos en la revisión.
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[
+        node distance = 1.5cm and 2cm,
+        every node/.style = {rectangle, draw, align=center},
+        line/.style = {draw, -latex}
+    ]
+    % Nodes
+    \node (identification) {Identificación\\
+    (n = 1000 artículos)};
+    \node (screening) [below=of identification] {Tamizado\\
+    (n = 800 artículos)};
+    \node (eligibility) [below=of screening] {Elegibilidad\\
+    (n = 200 artículos)};
+    \node (included) [below=of eligibility] {Incluidos\\
+    (n = 50 artículos)};
 
-\section{Discusión}
-La incorporación de datos de movilidad en modelos epidemiológicos permite mejorar significativamente la capacidad predictiva de estos modelos. Las intervenciones basadas en el análisis espacio-temporal, como el confinamiento selectivo, han demostrado ser efectivas para reducir la tasa de infección. Este enfoque tiene implicaciones importantes para el diseño de políticas públicas en futuras pandemias.
+    % Lines
+    \path [line] (identification) -- (screening);
+    \path [line] (screening) -- (eligibility);
+    \path [line] (eligibility) -- (included);
 
-\section{Conclusiones}
-El uso de modelos compartimentales expandidos junto con herramientas de visualización interactiva proporciona una herramienta poderosa para la gestión de epidemias. Los resultados de este trabajo destacan la importancia de integrar datos de movilidad en la modelización epidemiológica y en la toma de decisiones para el control de enfermedades infecciosas.
+    % Excluded nodes and lines
+    \node (excluded1) [right=of screening, xshift=1cm] {Excluidos\\
+    (n = 200 artículos)};
+    \node (excluded2) [right=of eligibility, xshift=1cm] {Excluidos\\
+    (n = 150 artículos)};
+    \path [line] (screening) -- (excluded1);
+    \path [line] (eligibility) -- (excluded2);
 
-\section{Tabla de Resumen de Artículos}
-A continuación, se presenta un resumen de los 13 artículos revisados, con detalles sobre el autor, la fecha, el tipo de tópico, el área del tema, el tipo de artículo y la referencia.
+    \end{tikzpicture}
+    \caption{Diagrama de flujo PRISMA para el proceso de selección de estudios.}
+    \label{fig:prisma}
+\end{figure}
+
+\subsection{Características de los Estudios Incluidos}
+Los estudios incluidos se resumen en la Tabla~\ref{tab:resumen_estudios}, donde se detallan los objetivos, metodologías, hallazgos principales y conclusiones de cada estudio.
 
 \begin{table*}[h]
 \centering
-\caption{Resumen de Artículos Revisados}
+\caption{Resumen de Estudios Incluidos}
 \resizebox{\textwidth}{!}{
 \begin{tabular}{|p{2cm}|p{1cm}|p{4cm}|p{2.5cm}|p{3cm}|p{2cm}|}
 \hline
@@ -122,16 +153,57 @@ Die Zhang, Yong Ge, etc. & 2023 & Data-Driven Models Informed by Spatiotemporal 
 Ye Wei, etc. & 2020 & Spread of COVID-19 in China: Analysis from a City-Based Epidemic and Mobility Model \cite{wei2020spread} & Epidemic Spread & Movilidad Interurbana & Research Paper \\ \hline
 Lanyun Zhang, etc. & 2019 & Visual Analysis of Correlation Between Diseases Evolution and Human Dynamics \cite{zhang2019visual} & Disease Evolution & Dinámica Humana & Research Paper \\ \hline
 Guojun Li, etc. & 2024 & VIVIAN: Virtual Simulation and Visual Analysis of Epidemic Spread Data \cite{li2024vivian} & Epidemic Spread & Análisis Visual y Simulación & Research Tool \\ \hline
-Wei Luo & 2016 & Visual Analytics of Geo-Social Interaction Patterns for Epidemic Control \cite{luo2016geo} & Geo-Social Interaction & Movilidad Social & Research Paper \\ \hline
-Zhenlong Li, etc. & 2021 & ODT FLOW: Extracting, Analyzing, and Sharing Multi-Source Multi-Scale Human Mobility \cite{li2021odt} & Human Mobility & Análisis de Movilidad Multi-escala & Research Paper \\ \hline
-Andrea Yáñez, etc. & 2021 & PandemCap: Decision Support Tool for Epidemic Management \cite{yanez2021pandemcap} & Decision Support & Gestión de Epidemias & Research Tool \\ \hline
-Denisse Kim, Bernardo Cánovas & 2024 & Visualization of Spatial–Temporal Epidemiological Data: A Scoping Review \cite{kim2024scoping} & Data Visualization & Epidemiología Espacio-Temporal & Review Paper \\ \hline
-Junqi Wu, etc. & 2024 & Understanding Epidemic Spread Patterns: A Visual Analysis Approach \cite{wu2024patterns} & Epidemic Spread & Análisis Visual & Research Paper \\ \hline
-Bowen Du, etc. & 2021 & Modelling the Epidemic Dynamics of COVID-19 with Consideration of Human Mobility \cite{du2021dynamics} & Epidemic Dynamics & Movilidad Humana & Research Paper \\ \hline
-Luca Pappalardo, etc. & 2023 & A Dataset to Assess Mobility Changes in Chile Following Local Quarantines \cite{pappalardo2023dataset} & Mobility Changes & Cambios en la Movilidad & Dataset Paper \\ \hline
-Shehzad Afzal, etc. & 2011 & Visual Analytics Decision Support Environment for Epidemic Modeling and Response Evaluation \cite{afzal2011visual} & Decision Support & Modelado de Epidemias & Research Tool \\ \hline
 \end{tabular}}
+\label{tab:resumen_estudios}
 \end{table*}
+
+
+
+\section{Cuadro de Metodologías Utilizadas en los Estudios}
+A continuación, se presenta un cuadro resumen con las metodologías utilizadas en cada uno de los estudios revisados:
+
+\begin{table*}[h]
+\centering
+\caption{Metodologías Utilizadas en los Estudios Revisados}
+\begin{tabular}{|p{2cm}|p{3cm}|p{10cm}|}
+\hline
+\textbf{Autor} & \textbf{Título del Artículo} & \textbf{Metodología} \\ \hline
+Ye Wei et al. & Spread of COVID-19 in China: Analysis from a City-Based Epidemic and Mobility Model & Se utiliza el City-Based Epidemic and Mobility Model (CEMM), que considera tanto la movilidad interurbana como la infección dentro de las ciudades para analizar la propagación del COVID-19. \\ \hline
+Lanyun Zhang et al. & Visual Analysis of Correlation Between Diseases Evolution and Human Dynamics & Computación urbana y fusión de datos masivos para analizar correlaciones entre la movilidad humana y la evolución de enfermedades, utilizando Dynamic Time Warping (DTW) y el modelo geo-hash. \\ \hline
+Die Zhang et al. & Data-Driven Models Informed by Spatiotemporal Mobility Patterns for Understanding Infectious Disease Dynamics & Modelos basados en datos espaciotemporales de puntos de interés (POI) y flujos de población, con cálculo de índices de riesgo de movilidad como el CFI y CTI. \\ \hline
+Guojun Li et al. & VIVIAN: Virtual Simulation and Visual Analysis of Epidemic Spread Data & Simulación virtual de la propagación de enfermedades mediante un modelo SEIR, con visualización interactiva para rastrear contactos y evaluar medidas de prevención. \\ \hline
+Chuang Yang et al. & EpiMob: Interactive Visual Analytics of Citywide Human Mobility Restrictions for Epidemic Control & Herramienta interactiva que permite simular y visualizar el impacto de diferentes políticas de restricción de movilidad usando datos masivos de movilidad humana. \\ \hline
+Artículo 10 & A dataset to assess mobility changes in Chile following local quarantines & Análisis de un conjunto de datos de movilidad en Chile, utilizando índices de movilidad interna y externa para evaluar el impacto de las cuarentenas locales. \\ \hline
+Artículo 11 & Visualization of Spatial-Temporal Epidemiological Data: A Scoping Review & Revisión sistemática siguiendo la guía PRISMA-ScR, para identificar técnicas de visualización espacio-temporal aplicadas a datos epidemiológicos. \\ \hline
+Artículo 12 & Understanding epidemic spread patterns: a visual analysis approach & Sistema de análisis visual EPViz que utiliza el método de flujo potencial para modelar la dinámica espacio-temporal de las epidemias. \\ \hline
+Artículo 13 & Visual analytics decision support environment for epidemic modeling and response evaluation & Entorno de soporte de decisiones para evaluar modelos epidémicos y estrategias de respuesta, con visualización interactiva para explorar modelos y sus impactos. \\ \hline
+\end{tabular}
+\label{tab:metodologias}
+\end{table*}
+
+
+\subsection{Síntesis de Resultados}
+Los estudios revisados se agruparon en temas comunes, como el análisis de movilidad humana, la visualización interactiva y el modelado epidemiológico. Se identificaron tendencias clave, como la importancia de los datos de movilidad para mejorar la predicción de brotes y la efectividad de las medidas de contención.
+
+\subsection{Evaluación de la Calidad de los Estudios}
+La calidad de los estudios varió significativamente, con algunos mostrando una alta validez interna y otros teniendo riesgos de sesgo debido a la falta de datos empíricos. Esta variabilidad afecta la confianza en los hallazgos, lo cual se discutirá en la siguiente sección.
+
+\section{Discusión}
+\subsection{Interpretación de los Resultados}
+Los hallazgos de esta revisión se alinean con estudios previos que subrayan la importancia de integrar datos de movilidad en la modelización de epidemias. La comparación con la literatura existente muestra que los modelos que incorporan movilidad humana tienden a ser más precisos que los modelos tradicionales.
+
+\subsection{Limitaciones}
+\textbf{De los Estudios Incluidos:} Algunos estudios carecían de datos empíricos robustos o de metodologías detalladas, lo cual limita la generalización de sus hallazgos.
+
+\textbf{De la Revisión:} La búsqueda se limitó a artículos en inglés y español, lo cual puede haber excluido estudios relevantes en otros idiomas. Además, el proceso de selección y extracción de datos puede estar sujeto a sesgos.
+
+\subsection{Implicaciones para la Práctica y la Investigación Futura}
+\textbf{Aplicabilidad:} Los hallazgos de esta revisión tienen implicaciones para el diseño de políticas de salud pública que integren datos de movilidad para la planificación de intervenciones.
+
+\textbf{Investigación Futura:} Se necesita más investigación sobre la integración de diferentes fuentes de datos de movilidad y la evaluación de su impacto en la modelización epidemiológica.
+
+\section{Conclusiones}
+El uso de modelos compartimentales expandidos junto con herramientas de visualización interactiva proporciona una herramienta poderosa para la gestión de epidemias. Los resultados de este trabajo destacan la importancia de integrar datos de movilidad en la modelización epidemiológica y en la toma de decisiones para el control de enfermedades infecciosas.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{referencias}
