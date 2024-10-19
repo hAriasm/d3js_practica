@@ -8,6 +8,8 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Database file #1: referencias.bib
+Warning--I didn't find a database entry for "prisma2009"
+Warning--I didn't find a database entry for "casp2018"
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'glb_str_end' (item size: 4) to 20 items.
 Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
@@ -39,45 +41,45 @@ Warning--no number and no volume in zhang2023data
 Warning--page numbers missing in both pages and numpages fields in zhang2023data
 Warning--no number and no volume in zhang2019visual
 Warning--page numbers missing in both pages and numpages fields in zhang2019visual
-You've used 15 entries,
+You've used 13 entries,
             5981 wiz_defined-function locations,
-            1533 strings with 19794 characters,
-and the built_in function-call counts, 15341 in all, are:
-= -- 2438
-> -- 445
+            1522 strings with 19430 characters,
+and the built_in function-call counts, 13336 in all, are:
+= -- 2148
+> -- 389
 < -- 0
-+ -- 153
-- -- 184
-* -- 954
-:= -- 1419
-add.period$ -- 76
-call.type$ -- 15
-change.case$ -- 92
-chr.to.int$ -- 15
-cite$ -- 41
-duplicate$ -- 1243
-empty$ -- 899
-format.name$ -- 236
-if$ -- 4047
++ -- 136
+- -- 165
+* -- 830
+:= -- 1231
+add.period$ -- 65
+call.type$ -- 13
+change.case$ -- 79
+chr.to.int$ -- 13
+cite$ -- 39
+duplicate$ -- 1067
+empty$ -- 781
+format.name$ -- 213
+if$ -- 3544
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 56
-newline$ -- 165
-num.names$ -- 105
-pop$ -- 537
+missing$ -- 52
+newline$ -- 144
+num.names$ -- 91
+pop$ -- 483
 preamble$ -- 1
-purify$ -- 212
+purify$ -- 183
 quote$ -- 0
-skip$ -- 395
+skip$ -- 320
 stack$ -- 0
-substring$ -- 844
-swap$ -- 76
+substring$ -- 704
+swap$ -- 52
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 254
+type$ -- 208
 warning$ -- 26
-while$ -- 94
+while$ -- 83
 width$ -- 0
-write$ -- 316
-(There were 26 warnings)
+write$ -- 273
+(There were 28 warnings)

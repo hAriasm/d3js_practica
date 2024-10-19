@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{15}
+\begin{thebibliography}{13}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -45,18 +45,6 @@
   Epidemic Modeling and Response Evaluation}.
 \newblock \bibinfo{journal}{\emph{Journal Name}} (\bibinfo{year}{2011}).
 \newblock
-
-
-\bibitem[{Critical Appraisal Skills Programme (CASP)}(2018)]%
-        {casp2018}
-\bibfield{author}{\bibinfo{person}{{Critical Appraisal Skills Programme
-  (CASP)}}.} \bibinfo{year}{2018}\natexlab{}.
-\newblock \bibinfo{title}{CASP Checklists}.
-\newblock
-  \bibinfo{howpublished}{\url{https://casp-uk.net/casp-tools-checklists/}}.
-\newblock
-\newblock
-\shownote{Accedido el 18 de octubre de 2024}.
 
 
 \bibitem[Du and etc.(2021)]%
@@ -106,21 +94,6 @@
   for Epidemic Control}.
 \newblock \bibinfo{journal}{\emph{Journal Name}} (\bibinfo{year}{2016}).
 \newblock
-
-
-\bibitem[Moher et~al\mbox{.}(2009)]%
-        {prisma2009}
-\bibfield{author}{\bibinfo{person}{David Moher}, \bibinfo{person}{Alessandro
-  Liberati}, \bibinfo{person}{Jennifer Tetzlaff}, {and}
-  \bibinfo{person}{Douglas~G. Altman}.} \bibinfo{year}{2009}\natexlab{}.
-\newblock \showarticletitle{Preferred reporting items for systematic reviews
-  and meta-analyses: the PRISMA statement}.
-\newblock \bibinfo{journal}{\emph{PLoS Medicine}} \bibinfo{volume}{6},
-  \bibinfo{number}{7} (\bibinfo{year}{2009}), \bibinfo{pages}{e1000097}.
-\newblock
-\urldef\tempurl%
-\url{https://doi.org/10.1371/journal.pmed.1000097}
-\showDOI{\tempurl}
 
 
 \bibitem[Pappalardo and etc.(2023)]%
