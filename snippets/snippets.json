@@ -1,6 +1,5 @@
 {
-	// Fundamental 
-	"D3 Selection": {
+ 	"D3 Selection": {
 		"prefix": "sel",
 		"body": [
 			"d3.select('$1')$2"
@@ -50,8 +49,7 @@
 		"description": "D3 nest"
 	},
 	
-	// Data
-	"D3 CSV": {
+ 	"D3 CSV": {
 		"prefix": "csv",
 		"body": [
 			"d3.csv('$1.csv', function($2){$3});$4"
@@ -73,8 +71,7 @@
 		"description": "d3.json"
 	},
 	
-	// SVG
-	"D3 SVG": {
+ 	"D3 SVG": {
 		"prefix": "circle",
 		"body": [
 			".enter()",
@@ -124,7 +121,7 @@
 		"description": "svg:rect"
 	},
 	
-	// Function
+	 
 	"Anonymous Function": {
 		"prefix": "af",
 		"body": [

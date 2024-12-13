@@ -1,0 +1,705 @@
+Region,Fecha,Fallecidos,Nuevos Fallecidos
+Antofagasta,2020-01-07,165.0,0.0
+Antofagasta,2020-02-10,503.0,338.0
+Antofagasta,2020-02-11,565.0,62.0
+Antofagasta,2020-03-08,366.0,-199.0
+Antofagasta,2020-04-09,460.0,94.0
+Antofagasta,2020-04-12,594.0,134.0
+Antofagasta,2020-05-07,198.0,-396.0
+Antofagasta,2020-05-10,510.0,312.0
+Antofagasta,2020-06-11,567.0,57.0
+Antofagasta,2020-07-08,381.0,-186.0
+Antofagasta,2020-07-09,468.0,87.0
+Antofagasta,2020-07-12,597.0,129.0
+Antofagasta,2020-09-10,512.0,-85.0
+Antofagasta,2020-09-11,568.0,56.0
+Antofagasta,2020-10-07,230.0,-338.0
+Antofagasta,2020-10-08,391.0,161.0
+Antofagasta,2020-11-09,480.0,89.0
+Antofagasta,2020-11-12,599.0,119.0
+Antofagasta,2020-12-06,64.0,-535.0
+Antofagasta,2020-12-10,519.0,455.0
+Antofagasta,2021-01-01,618.0,99.0
+Antofagasta,2021-01-02,696.0,78.0
+Antofagasta,2021-01-03,818.0,122.0
+Antofagasta,2021-01-10,1435.0,617.0
+Antofagasta,2021-01-11,1473.0,38.0
+Antofagasta,2021-02-04,957.0,-516.0
+Antofagasta,2021-02-07,1241.0,284.0
+Antofagasta,2021-02-08,1326.0,85.0
+Antofagasta,2021-03-05,1060.0,-266.0
+Antofagasta,2021-03-09,1400.0,340.0
+Antofagasta,2021-03-12,1526.0,126.0
+Antofagasta,2021-04-01,620.0,-906.0
+Antofagasta,2021-04-06,1151.0,531.0
+Antofagasta,2021-04-10,1440.0,289.0
+Antofagasta,2021-05-02,712.0,-728.0
+Antofagasta,2021-05-03,839.0,127.0
+Antofagasta,2021-05-04,970.0,131.0
+Antofagasta,2021-05-07,1255.0,285.0
+Antofagasta,2021-05-11,1478.0,223.0
+Antofagasta,2021-06-08,1334.0,-144.0
+Antofagasta,2021-06-09,1402.0,68.0
+Antofagasta,2021-06-12,1532.0,130.0
+Antofagasta,2021-07-05,1069.0,-463.0
+Antofagasta,2021-07-06,1162.0,93.0
+Arica y Parinacota,2020-01-07,22.0,0.0
+Arica y Parinacota,2020-02-10,154.0,132.0
+Arica y Parinacota,2020-02-11,193.0,39.0
+Arica y Parinacota,2020-03-08,69.0,-124.0
+Arica y Parinacota,2020-04-09,117.0,48.0
+Arica y Parinacota,2020-04-12,217.0,100.0
+Arica y Parinacota,2020-05-07,23.0,-194.0
+Arica y Parinacota,2020-05-10,158.0,135.0
+Arica y Parinacota,2020-06-11,198.0,40.0
+Arica y Parinacota,2020-07-08,76.0,-122.0
+Arica y Parinacota,2020-07-09,122.0,46.0
+Arica y Parinacota,2020-07-12,219.0,97.0
+Arica y Parinacota,2020-09-10,160.0,-59.0
+Arica y Parinacota,2020-09-11,199.0,39.0
+Arica y Parinacota,2020-10-07,25.0,-174.0
+Arica y Parinacota,2020-10-08,80.0,55.0
+Arica y Parinacota,2020-11-09,129.0,49.0
+Arica y Parinacota,2020-11-12,221.0,92.0
+Arica y Parinacota,2020-12-06,10.0,-211.0
+Arica y Parinacota,2020-12-10,162.0,152.0
+Arica y Parinacota,2021-01-01,234.0,72.0
+Arica y Parinacota,2021-01-02,267.0,33.0
+Arica y Parinacota,2021-01-03,314.0,47.0
+Arica y Parinacota,2021-01-10,652.0,338.0
+Arica y Parinacota,2021-01-11,675.0,23.0
+Arica y Parinacota,2021-02-04,408.0,-267.0
+Arica y Parinacota,2021-02-07,573.0,165.0
+Arica y Parinacota,2021-02-08,596.0,23.0
+Arica y Parinacota,2021-03-05,450.0,-146.0
+Arica y Parinacota,2021-03-09,626.0,176.0
+Arica y Parinacota,2021-03-12,695.0,69.0
+Arica y Parinacota,2021-04-01,237.0,-458.0
+Arica y Parinacota,2021-04-06,523.0,286.0
+Arica y Parinacota,2021-04-10,656.0,133.0
+Arica y Parinacota,2021-05-02,271.0,-385.0
+Arica y Parinacota,2021-05-03,330.0,59.0
+Arica y Parinacota,2021-05-04,413.0,83.0
+Arica y Parinacota,2021-05-07,584.0,171.0
+Arica y Parinacota,2021-05-11,677.0,93.0
+Arica y Parinacota,2021-06-08,602.0,-75.0
+Arica y Parinacota,2021-06-09,627.0,25.0
+Arica y Parinacota,2021-06-12,697.0,70.0
+Arica y Parinacota,2021-07-05,460.0,-237.0
+Arica y Parinacota,2021-07-06,536.0,76.0
+Atacama,2020-01-07,2.0,0.0
+Atacama,2020-02-10,66.0,64.0
+Atacama,2020-02-11,91.0,25.0
+Atacama,2020-03-08,13.0,-78.0
+Atacama,2020-04-09,48.0,35.0
+Atacama,2020-04-12,105.0,57.0
+Atacama,2020-05-07,4.0,-101.0
+Atacama,2020-05-10,68.0,64.0
+Atacama,2020-06-11,94.0,26.0
+Atacama,2020-07-08,17.0,-77.0
+Atacama,2020-07-09,50.0,33.0
+Atacama,2020-07-12,105.0,55.0
+Atacama,2020-09-10,70.0,-35.0
+Atacama,2020-09-11,96.0,26.0
+Atacama,2020-10-07,6.0,-90.0
+Atacama,2020-10-08,19.0,13.0
+Atacama,2020-11-09,52.0,33.0
+Atacama,2020-11-12,106.0,54.0
+Atacama,2020-12-06,0.0,-106.0
+Atacama,2020-12-10,75.0,75.0
+Atacama,2021-01-01,112.0,37.0
+Atacama,2021-01-02,130.0,18.0
+Atacama,2021-01-03,160.0,30.0
+Atacama,2021-01-10,439.0,279.0
+Atacama,2021-01-11,453.0,14.0
+Atacama,2021-02-04,201.0,-252.0
+Atacama,2021-02-07,317.0,116.0
+Atacama,2021-02-08,384.0,67.0
+Atacama,2021-03-05,218.0,-166.0
+Atacama,2021-03-09,424.0,206.0
+Atacama,2021-03-12,481.0,57.0
+Atacama,2021-04-01,113.0,-368.0
+Atacama,2021-04-06,270.0,157.0
+Atacama,2021-04-10,439.0,169.0
+Atacama,2021-05-02,131.0,-308.0
+Atacama,2021-05-03,164.0,33.0
+Atacama,2021-05-04,203.0,39.0
+Atacama,2021-05-07,330.0,127.0
+Atacama,2021-05-11,455.0,125.0
+Atacama,2021-06-08,395.0,-60.0
+Atacama,2021-06-09,426.0,31.0
+Atacama,2021-06-12,484.0,58.0
+Atacama,2021-07-05,225.0,-259.0
+Atacama,2021-07-06,274.0,49.0
+Aysen,2020-01-07,0.0,0.0
+Aysen,2020-02-10,0.0,0.0
+Aysen,2020-02-11,4.0,4.0
+Aysen,2020-03-08,0.0,-4.0
+Aysen,2020-04-09,0.0,0.0
+Aysen,2020-04-12,13.0,13.0
+Aysen,2020-05-07,0.0,-13.0
+Aysen,2020-05-10,0.0,0.0
+Aysen,2020-06-11,5.0,5.0
+Aysen,2020-07-08,0.0,-5.0
+Aysen,2020-07-09,0.0,0.0
+Aysen,2020-07-12,14.0,14.0
+Aysen,2020-09-10,0.0,-14.0
+Aysen,2020-09-11,6.0,6.0
+Aysen,2020-10-07,0.0,-6.0
+Aysen,2020-10-08,0.0,0.0
+Aysen,2020-11-09,0.0,0.0
+Aysen,2020-11-12,14.0,14.0
+Aysen,2020-12-06,0.0,-14.0
+Aysen,2020-12-10,0.0,0.0
+Aysen,2021-01-01,14.0,14.0
+Aysen,2021-01-02,19.0,5.0
+Aysen,2021-01-03,26.0,7.0
+Aysen,2021-01-10,98.0,72.0
+Aysen,2021-01-11,103.0,5.0
+Aysen,2021-02-04,31.0,-72.0
+Aysen,2021-02-07,72.0,41.0
+Aysen,2021-02-08,85.0,13.0
+Aysen,2021-03-05,35.0,-50.0
+Aysen,2021-03-09,93.0,58.0
+Aysen,2021-03-12,107.0,14.0
+Aysen,2021-04-01,14.0,-93.0
+Aysen,2021-04-06,46.0,32.0
+Aysen,2021-04-10,99.0,53.0
+Aysen,2021-05-02,20.0,-79.0
+Aysen,2021-05-03,27.0,7.0
+Aysen,2021-05-04,32.0,5.0
+Aysen,2021-05-07,75.0,43.0
+Aysen,2021-05-11,103.0,28.0
+Aysen,2021-06-08,86.0,-17.0
+Aysen,2021-06-09,93.0,7.0
+Aysen,2021-06-12,108.0,15.0
+Aysen,2021-07-05,35.0,-73.0
+Aysen,2021-07-06,50.0,15.0
+Biobío,2020-01-07,62.0,0.0
+Biobío,2020-02-10,347.0,285.0
+Biobío,2020-02-11,521.0,174.0
+Biobío,2020-03-08,127.0,-394.0
+Biobío,2020-04-09,234.0,107.0
+Biobío,2020-04-12,658.0,424.0
+Biobío,2020-05-07,73.0,-585.0
+Biobío,2020-05-10,363.0,290.0
+Biobío,2020-06-11,536.0,173.0
+Biobío,2020-07-08,134.0,-402.0
+Biobío,2020-07-09,245.0,111.0
+Biobío,2020-07-12,670.0,425.0
+Biobío,2020-09-10,376.0,-294.0
+Biobío,2020-09-11,550.0,174.0
+Biobío,2020-10-07,80.0,-470.0
+Biobío,2020-10-08,142.0,62.0
+Biobío,2020-11-09,260.0,118.0
+Biobío,2020-11-12,693.0,433.0
+Biobío,2020-12-06,11.0,-682.0
+Biobío,2020-12-10,388.0,377.0
+Biobío,2021-01-01,844.0,456.0
+Biobío,2021-01-02,1129.0,285.0
+Biobío,2021-01-03,1380.0,251.0
+Biobío,2021-01-10,3341.0,1961.0
+Biobío,2021-01-11,3453.0,112.0
+Biobío,2021-02-04,1902.0,-1551.0
+Biobío,2021-02-07,2746.0,844.0
+Biobío,2021-02-08,3016.0,270.0
+Biobío,2021-03-05,2147.0,-869.0
+Biobío,2021-03-09,3215.0,1068.0
+Biobío,2021-03-12,3603.0,388.0
+Biobío,2021-04-01,865.0,-2738.0
+Biobío,2021-04-06,2480.0,1615.0
+Biobío,2021-04-10,3352.0,872.0
+Biobío,2021-05-02,1162.0,-2190.0
+Biobío,2021-05-03,1429.0,267.0
+Biobío,2021-05-04,1942.0,513.0
+Biobío,2021-05-07,2789.0,847.0
+Biobío,2021-05-11,3461.0,672.0
+Biobío,2021-06-08,3052.0,-409.0
+Biobío,2021-06-09,3240.0,188.0
+Biobío,2021-06-12,3633.0,393.0
+Biobío,2021-07-05,2181.0,-1452.0
+Biobío,2021-07-06,2515.0,334.0
+Coquimbo,2020-01-07,28.0,0.0
+Coquimbo,2020-02-10,223.0,195.0
+Coquimbo,2020-02-11,265.0,42.0
+Coquimbo,2020-03-08,75.0,-190.0
+Coquimbo,2020-04-09,154.0,79.0
+Coquimbo,2020-04-12,291.0,137.0
+Coquimbo,2020-05-07,34.0,-257.0
+Coquimbo,2020-05-10,227.0,193.0
+Coquimbo,2020-06-11,268.0,41.0
+Coquimbo,2020-07-08,80.0,-188.0
+Coquimbo,2020-07-09,164.0,84.0
+Coquimbo,2020-07-12,292.0,128.0
+Coquimbo,2020-09-10,234.0,-58.0
+Coquimbo,2020-09-11,275.0,41.0
+Coquimbo,2020-10-07,38.0,-237.0
+Coquimbo,2020-10-08,86.0,48.0
+Coquimbo,2020-11-09,177.0,91.0
+Coquimbo,2020-11-12,293.0,116.0
+Coquimbo,2020-12-06,9.0,-284.0
+Coquimbo,2020-12-10,236.0,227.0
+Coquimbo,2021-01-01,318.0,82.0
+Coquimbo,2021-01-02,362.0,44.0
+Coquimbo,2021-01-03,444.0,82.0
+Coquimbo,2021-01-10,1265.0,821.0
+Coquimbo,2021-01-11,1316.0,51.0
+Coquimbo,2021-02-04,618.0,-698.0
+Coquimbo,2021-02-07,1017.0,399.0
+Coquimbo,2021-02-08,1130.0,113.0
+Coquimbo,2021-03-05,738.0,-392.0
+Coquimbo,2021-03-09,1215.0,477.0
+Coquimbo,2021-03-12,1382.0,167.0
+Coquimbo,2021-04-01,321.0,-1061.0
+Coquimbo,2021-04-06,868.0,547.0
+Coquimbo,2021-04-10,1267.0,399.0
+Coquimbo,2021-05-02,373.0,-894.0
+Coquimbo,2021-05-03,468.0,95.0
+Coquimbo,2021-05-04,630.0,162.0
+Coquimbo,2021-05-07,1043.0,413.0
+Coquimbo,2021-05-11,1321.0,278.0
+Coquimbo,2021-06-08,1140.0,-181.0
+Coquimbo,2021-06-09,1218.0,78.0
+Coquimbo,2021-06-12,1391.0,173.0
+Coquimbo,2021-07-05,757.0,-634.0
+Coquimbo,2021-07-06,882.0,125.0
+Del Libertador General Bernardo O’Higgins,2020-01-07,81.0,0.0
+Del Libertador General Bernardo O’Higgins,2020-02-10,423.0,342.0
+Del Libertador General Bernardo O’Higgins,2020-02-11,512.0,89.0
+Del Libertador General Bernardo O’Higgins,2020-03-08,253.0,-259.0
+Del Libertador General Bernardo O’Higgins,2020-04-09,344.0,91.0
+Del Libertador General Bernardo O’Higgins,2020-04-12,565.0,221.0
+Del Libertador General Bernardo O’Higgins,2020-05-07,107.0,-458.0
+Del Libertador General Bernardo O’Higgins,2020-05-10,430.0,323.0
+Del Libertador General Bernardo O’Higgins,2020-06-11,516.0,86.0
+Del Libertador General Bernardo O’Higgins,2020-07-08,263.0,-253.0
+Del Libertador General Bernardo O’Higgins,2020-07-09,349.0,86.0
+Del Libertador General Bernardo O’Higgins,2020-07-12,571.0,222.0
+Del Libertador General Bernardo O’Higgins,2020-09-10,439.0,-132.0
+Del Libertador General Bernardo O’Higgins,2020-09-11,522.0,83.0
+Del Libertador General Bernardo O’Higgins,2020-10-07,129.0,-393.0
+Del Libertador General Bernardo O’Higgins,2020-10-08,279.0,150.0
+Del Libertador General Bernardo O’Higgins,2020-11-09,358.0,79.0
+Del Libertador General Bernardo O’Higgins,2020-11-12,576.0,218.0
+Del Libertador General Bernardo O’Higgins,2020-12-06,27.0,-549.0
+Del Libertador General Bernardo O’Higgins,2020-12-10,445.0,418.0
+Del Libertador General Bernardo O’Higgins,2021-01-01,602.0,157.0
+Del Libertador General Bernardo O’Higgins,2021-01-02,685.0,83.0
+Del Libertador General Bernardo O’Higgins,2021-01-03,806.0,121.0
+Del Libertador General Bernardo O’Higgins,2021-01-10,1901.0,1095.0
+Del Libertador General Bernardo O’Higgins,2021-01-11,1970.0,69.0
+Del Libertador General Bernardo O’Higgins,2021-02-04,1010.0,-960.0
+Del Libertador General Bernardo O’Higgins,2021-02-07,1577.0,567.0
+Del Libertador General Bernardo O’Higgins,2021-02-08,1750.0,173.0
+Del Libertador General Bernardo O’Higgins,2021-03-05,1180.0,-570.0
+Del Libertador General Bernardo O’Higgins,2021-03-09,1835.0,655.0
+Del Libertador General Bernardo O’Higgins,2021-03-12,2052.0,217.0
+Del Libertador General Bernardo O’Higgins,2021-04-01,608.0,-1444.0
+Del Libertador General Bernardo O’Higgins,2021-04-06,1372.0,764.0
+Del Libertador General Bernardo O’Higgins,2021-04-10,1906.0,534.0
+Del Libertador General Bernardo O’Higgins,2021-05-02,702.0,-1204.0
+Del Libertador General Bernardo O’Higgins,2021-05-03,823.0,121.0
+Del Libertador General Bernardo O’Higgins,2021-05-04,1024.0,201.0
+Del Libertador General Bernardo O’Higgins,2021-05-07,1608.0,584.0
+Del Libertador General Bernardo O’Higgins,2021-05-11,1980.0,372.0
+Del Libertador General Bernardo O’Higgins,2021-06-08,1763.0,-217.0
+Del Libertador General Bernardo O’Higgins,2021-06-09,1844.0,81.0
+Del Libertador General Bernardo O’Higgins,2021-06-12,2059.0,215.0
+Del Libertador General Bernardo O’Higgins,2021-07-05,1203.0,-856.0
+Del Libertador General Bernardo O’Higgins,2021-07-06,1397.0,194.0
+La Araucanía,2020-01-07,59.0,0.0
+La Araucanía,2020-02-10,109.0,50.0
+La Araucanía,2020-02-11,154.0,45.0
+La Araucanía,2020-03-08,72.0,-82.0
+La Araucanía,2020-04-09,89.0,17.0
+La Araucanía,2020-04-12,237.0,148.0
+La Araucanía,2020-05-07,64.0,-173.0
+La Araucanía,2020-05-10,110.0,46.0
+La Araucanía,2020-06-11,163.0,53.0
+La Araucanía,2020-07-08,75.0,-88.0
+La Araucanía,2020-07-09,89.0,14.0
+La Araucanía,2020-07-12,246.0,157.0
+La Araucanía,2020-09-10,114.0,-132.0
+La Araucanía,2020-09-11,168.0,54.0
+La Araucanía,2020-10-07,66.0,-102.0
+La Araucanía,2020-10-08,76.0,10.0
+La Araucanía,2020-11-09,90.0,14.0
+La Araucanía,2020-11-12,253.0,163.0
+La Araucanía,2020-12-06,39.0,-214.0
+La Araucanía,2020-12-10,120.0,81.0
+La Araucanía,2021-01-01,307.0,187.0
+La Araucanía,2021-01-02,411.0,104.0
+La Araucanía,2021-01-03,549.0,138.0
+La Araucanía,2021-01-10,1958.0,1409.0
+La Araucanía,2021-01-11,2036.0,78.0
+La Araucanía,2021-02-04,822.0,-1214.0
+La Araucanía,2021-02-07,1491.0,669.0
+La Araucanía,2021-02-08,1720.0,229.0
+La Araucanía,2021-03-05,1013.0,-707.0
+La Araucanía,2021-03-09,1871.0,858.0
+La Araucanía,2021-03-12,2104.0,233.0
+La Araucanía,2021-04-01,313.0,-1791.0
+La Araucanía,2021-04-06,1287.0,974.0
+La Araucanía,2021-04-10,1966.0,679.0
+La Araucanía,2021-05-02,426.0,-1540.0
+La Araucanía,2021-05-03,577.0,151.0
+La Araucanía,2021-05-04,842.0,265.0
+La Araucanía,2021-05-07,1513.0,671.0
+La Araucanía,2021-05-11,2041.0,528.0
+La Araucanía,2021-06-08,1746.0,-295.0
+La Araucanía,2021-06-09,1880.0,134.0
+La Araucanía,2021-06-12,2108.0,228.0
+La Araucanía,2021-07-05,1046.0,-1062.0
+La Araucanía,2021-07-06,1320.0,274.0
+Los Lagos,2020-01-07,23.0,0.0
+Los Lagos,2020-02-10,98.0,75.0
+Los Lagos,2020-02-11,138.0,40.0
+Los Lagos,2020-03-08,44.0,-94.0
+Los Lagos,2020-04-09,75.0,31.0
+Los Lagos,2020-04-12,219.0,144.0
+Los Lagos,2020-05-07,23.0,-196.0
+Los Lagos,2020-05-10,102.0,79.0
+Los Lagos,2020-06-11,146.0,44.0
+Los Lagos,2020-07-08,52.0,-94.0
+Los Lagos,2020-07-09,75.0,23.0
+Los Lagos,2020-07-12,227.0,152.0
+Los Lagos,2020-09-10,104.0,-123.0
+Los Lagos,2020-09-11,153.0,49.0
+Los Lagos,2020-10-07,26.0,-127.0
+Los Lagos,2020-10-08,55.0,29.0
+Los Lagos,2020-11-09,79.0,24.0
+Los Lagos,2020-11-12,229.0,150.0
+Los Lagos,2020-12-06,12.0,-217.0
+Los Lagos,2020-12-10,107.0,95.0
+Los Lagos,2021-01-01,273.0,166.0
+Los Lagos,2021-01-02,435.0,162.0
+Los Lagos,2021-01-03,672.0,237.0
+Los Lagos,2021-01-10,1691.0,1019.0
+Los Lagos,2021-01-11,1764.0,73.0
+Los Lagos,2021-02-04,975.0,-789.0
+Los Lagos,2021-02-07,1413.0,438.0
+Los Lagos,2021-02-08,1547.0,134.0
+Los Lagos,2021-03-05,1044.0,-503.0
+Los Lagos,2021-03-09,1635.0,591.0
+Los Lagos,2021-03-12,1840.0,205.0
+Los Lagos,2021-04-01,278.0,-1562.0
+Los Lagos,2021-04-06,1230.0,952.0
+Los Lagos,2021-04-10,1697.0,467.0
+Los Lagos,2021-05-02,463.0,-1234.0
+Los Lagos,2021-05-03,708.0,245.0
+Los Lagos,2021-05-04,997.0,289.0
+Los Lagos,2021-05-07,1436.0,439.0
+Los Lagos,2021-05-11,1768.0,332.0
+Los Lagos,2021-06-08,1565.0,-203.0
+Los Lagos,2021-06-09,1642.0,77.0
+Los Lagos,2021-06-12,1851.0,209.0
+Los Lagos,2021-07-05,1062.0,-789.0
+Los Lagos,2021-07-06,1258.0,196.0
+Los Rios,2020-01-07,10.0,0.0
+Los Rios,2020-02-10,18.0,8.0
+Los Rios,2020-02-11,30.0,12.0
+Los Rios,2020-03-08,12.0,-18.0
+Los Rios,2020-04-09,13.0,1.0
+Los Rios,2020-04-12,59.0,46.0
+Los Rios,2020-05-07,10.0,-49.0
+Los Rios,2020-05-10,19.0,9.0
+Los Rios,2020-06-11,32.0,13.0
+Los Rios,2020-07-08,13.0,-19.0
+Los Rios,2020-07-09,13.0,0.0
+Los Rios,2020-07-12,62.0,49.0
+Los Rios,2020-09-10,19.0,-43.0
+Los Rios,2020-09-11,36.0,17.0
+Los Rios,2020-10-07,11.0,-25.0
+Los Rios,2020-10-08,13.0,2.0
+Los Rios,2020-11-09,13.0,0.0
+Los Rios,2020-11-12,64.0,51.0
+Los Rios,2020-12-06,9.0,-55.0
+Los Rios,2020-12-10,23.0,14.0
+Los Rios,2021-01-01,94.0,71.0
+Los Rios,2021-01-02,161.0,67.0
+Los Rios,2021-01-03,240.0,79.0
+Los Rios,2021-01-10,915.0,675.0
+Los Rios,2021-01-11,951.0,36.0
+Los Rios,2021-02-04,398.0,-553.0
+Los Rios,2021-02-07,672.0,274.0
+Los Rios,2021-02-08,793.0,121.0
+Los Rios,2021-03-05,424.0,-369.0
+Los Rios,2021-03-09,874.0,450.0
+Los Rios,2021-03-12,989.0,115.0
+Los Rios,2021-04-01,103.0,-886.0
+Los Rios,2021-04-06,539.0,436.0
+Los Rios,2021-04-10,920.0,381.0
+Los Rios,2021-05-02,168.0,-752.0
+Los Rios,2021-05-03,266.0,98.0
+Los Rios,2021-05-04,409.0,143.0
+Los Rios,2021-05-07,690.0,281.0
+Los Rios,2021-05-11,954.0,264.0
+Los Rios,2021-06-08,805.0,-149.0
+Los Rios,2021-06-09,880.0,75.0
+Los Rios,2021-06-12,994.0,114.0
+Los Rios,2021-07-05,433.0,-561.0
+Los Rios,2021-07-06,554.0,121.0
+Magallanes y la Antartica,2020-01-07,22.0,0.0
+Magallanes y la Antartica,2020-02-10,86.0,64.0
+Magallanes y la Antartica,2020-02-11,149.0,63.0
+Magallanes y la Antartica,2020-03-08,29.0,-120.0
+Magallanes y la Antartica,2020-04-09,44.0,15.0
+Magallanes y la Antartica,2020-04-12,213.0,169.0
+Magallanes y la Antartica,2020-05-07,23.0,-190.0
+Magallanes y la Antartica,2020-05-10,98.0,75.0
+Magallanes y la Antartica,2020-06-11,158.0,60.0
+Magallanes y la Antartica,2020-07-08,30.0,-128.0
+Magallanes y la Antartica,2020-07-09,46.0,16.0
+Magallanes y la Antartica,2020-07-12,218.0,172.0
+Magallanes y la Antartica,2020-09-10,108.0,-110.0
+Magallanes y la Antartica,2020-09-11,165.0,57.0
+Magallanes y la Antartica,2020-10-07,26.0,-139.0
+Magallanes y la Antartica,2020-10-08,30.0,4.0
+Magallanes y la Antartica,2020-11-09,50.0,20.0
+Magallanes y la Antartica,2020-11-12,223.0,173.0
+Magallanes y la Antartica,2020-12-06,16.0,-207.0
+Magallanes y la Antartica,2020-12-10,111.0,95.0
+Magallanes y la Antartica,2021-01-01,244.0,133.0
+Magallanes y la Antartica,2021-01-02,288.0,44.0
+Magallanes y la Antartica,2021-01-03,335.0,47.0
+Magallanes y la Antartica,2021-01-10,587.0,252.0
+Magallanes y la Antartica,2021-01-11,609.0,22.0
+Magallanes y la Antartica,2021-02-04,385.0,-224.0
+Magallanes y la Antartica,2021-02-07,513.0,128.0
+Magallanes y la Antartica,2021-02-08,546.0,33.0
+Magallanes y la Antartica,2021-03-05,399.0,-147.0
+Magallanes y la Antartica,2021-03-09,573.0,174.0
+Magallanes y la Antartica,2021-03-12,624.0,51.0
+Magallanes y la Antartica,2021-04-01,244.0,-380.0
+Magallanes y la Antartica,2021-04-06,453.0,209.0
+Magallanes y la Antartica,2021-04-10,589.0,136.0
+Magallanes y la Antartica,2021-05-02,293.0,-296.0
+Magallanes y la Antartica,2021-05-03,341.0,48.0
+Magallanes y la Antartica,2021-05-04,388.0,47.0
+Magallanes y la Antartica,2021-05-07,520.0,132.0
+Magallanes y la Antartica,2021-05-11,610.0,90.0
+Magallanes y la Antartica,2021-06-08,546.0,-64.0
+Magallanes y la Antartica,2021-06-09,575.0,29.0
+Magallanes y la Antartica,2021-06-12,626.0,51.0
+Magallanes y la Antartica,2021-07-05,403.0,-223.0
+Magallanes y la Antartica,2021-07-06,464.0,61.0
+Maule,2020-01-07,56.0,0.0
+Maule,2020-02-10,328.0,272.0
+Maule,2020-02-11,429.0,101.0
+Maule,2020-03-08,190.0,-239.0
+Maule,2020-04-09,268.0,78.0
+Maule,2020-04-12,509.0,241.0
+Maule,2020-05-07,78.0,-431.0
+Maule,2020-05-10,345.0,267.0
+Maule,2020-06-11,431.0,86.0
+Maule,2020-07-08,194.0,-237.0
+Maule,2020-07-09,273.0,79.0
+Maule,2020-07-12,511.0,238.0
+Maule,2020-09-10,357.0,-154.0
+Maule,2020-09-11,447.0,90.0
+Maule,2020-10-07,96.0,-351.0
+Maule,2020-10-08,200.0,104.0
+Maule,2020-11-09,282.0,82.0
+Maule,2020-11-12,514.0,232.0
+Maule,2020-12-06,18.0,-496.0
+Maule,2020-12-10,368.0,350.0
+Maule,2021-01-01,565.0,197.0
+Maule,2021-01-02,723.0,158.0
+Maule,2021-01-03,881.0,158.0
+Maule,2021-01-10,2141.0,1260.0
+Maule,2021-01-11,2211.0,70.0
+Maule,2021-02-04,1131.0,-1080.0
+Maule,2021-02-07,1782.0,651.0
+Maule,2021-02-08,1989.0,207.0
+Maule,2021-03-05,1332.0,-657.0
+Maule,2021-03-09,2096.0,764.0
+Maule,2021-03-12,2306.0,210.0
+Maule,2021-04-01,578.0,-1728.0
+Maule,2021-04-06,1591.0,1013.0
+Maule,2021-04-10,2152.0,561.0
+Maule,2021-05-02,740.0,-1412.0
+Maule,2021-05-03,898.0,158.0
+Maule,2021-05-04,1153.0,255.0
+Maule,2021-05-07,1811.0,658.0
+Maule,2021-05-11,2216.0,405.0
+Maule,2021-06-08,1999.0,-217.0
+Maule,2021-06-09,2102.0,103.0
+Maule,2021-06-12,2315.0,213.0
+Maule,2021-07-05,1364.0,-951.0
+Maule,2021-07-06,1618.0,254.0
+Metropolitana,2020-01-07,5611.0,0.0
+Metropolitana,2020-02-10,9533.0,3922.0
+Metropolitana,2020-02-11,10260.0,727.0
+Metropolitana,2020-03-08,7932.0,-2328.0
+Metropolitana,2020-04-09,8877.0,945.0
+Metropolitana,2020-04-12,10789.0,1912.0
+Metropolitana,2020-05-07,6140.0,-4649.0
+Metropolitana,2020-05-10,9601.0,3461.0
+Metropolitana,2020-06-11,10332.0,731.0
+Metropolitana,2020-07-08,8081.0,-2251.0
+Metropolitana,2020-07-09,8956.0,875.0
+Metropolitana,2020-07-12,10838.0,1882.0
+Metropolitana,2020-09-10,9692.0,-1146.0
+Metropolitana,2020-09-11,10393.0,701.0
+Metropolitana,2020-10-07,6561.0,-3832.0
+Metropolitana,2020-10-08,8181.0,1620.0
+Metropolitana,2020-11-09,9057.0,876.0
+Metropolitana,2020-11-12,10896.0,1839.0
+Metropolitana,2020-12-06,2473.0,-8423.0
+Metropolitana,2020-12-10,9764.0,7291.0
+Metropolitana,2021-01-01,11239.0,1475.0
+Metropolitana,2021-01-02,11828.0,589.0
+Metropolitana,2021-01-03,12576.0,748.0
+Metropolitana,2021-01-10,23061.0,10485.0
+Metropolitana,2021-01-11,23701.0,640.0
+Metropolitana,2021-02-04,13929.0,-9772.0
+Metropolitana,2021-02-07,19585.0,5656.0
+Metropolitana,2021-02-08,21342.0,1757.0
+Metropolitana,2021-03-05,15446.0,-5896.0
+Metropolitana,2021-03-09,22447.0,7001.0
+Metropolitana,2021-03-12,24595.0,2148.0
+Metropolitana,2021-04-01,11275.0,-13320.0
+Metropolitana,2021-04-06,17421.0,6146.0
+Metropolitana,2021-04-10,23112.0,5691.0
+Metropolitana,2021-05-02,11890.0,-11222.0
+Metropolitana,2021-05-03,12706.0,816.0
+Metropolitana,2021-05-04,14111.0,1405.0
+Metropolitana,2021-05-07,19858.0,5747.0
+Metropolitana,2021-05-11,23791.0,3933.0
+Metropolitana,2021-06-08,21506.0,-2285.0
+Metropolitana,2021-06-09,22520.0,1014.0
+Metropolitana,2021-06-12,24621.0,2101.0
+Metropolitana,2021-07-05,15662.0,-8959.0
+Metropolitana,2021-07-06,17660.0,1998.0
+Tarapacá,2020-01-07,102.0,0.0
+Tarapacá,2020-02-10,234.0,132.0
+Tarapacá,2020-02-11,251.0,17.0
+Tarapacá,2020-03-08,173.0,-78.0
+Tarapacá,2020-04-09,207.0,34.0
+Tarapacá,2020-04-12,267.0,60.0
+Tarapacá,2020-05-07,112.0,-155.0
+Tarapacá,2020-05-10,236.0,124.0
+Tarapacá,2020-06-11,251.0,15.0
+Tarapacá,2020-07-08,179.0,-72.0
+Tarapacá,2020-07-09,212.0,33.0
+Tarapacá,2020-07-12,269.0,57.0
+Tarapacá,2020-09-10,238.0,-31.0
+Tarapacá,2020-09-11,251.0,13.0
+Tarapacá,2020-10-07,125.0,-126.0
+Tarapacá,2020-10-08,183.0,58.0
+Tarapacá,2020-11-09,214.0,31.0
+Tarapacá,2020-11-12,271.0,57.0
+Tarapacá,2020-12-06,48.0,-223.0
+Tarapacá,2020-12-10,238.0,190.0
+Tarapacá,2021-01-01,296.0,58.0
+Tarapacá,2021-01-02,368.0,72.0
+Tarapacá,2021-01-03,448.0,80.0
+Tarapacá,2021-01-10,916.0,468.0
+Tarapacá,2021-01-11,934.0,18.0
+Tarapacá,2021-02-04,553.0,-381.0
+Tarapacá,2021-02-07,810.0,257.0
+Tarapacá,2021-02-08,870.0,60.0
+Tarapacá,2021-03-05,665.0,-205.0
+Tarapacá,2021-03-09,902.0,237.0
+Tarapacá,2021-03-12,944.0,42.0
+Tarapacá,2021-04-01,299.0,-645.0
+Tarapacá,2021-04-06,743.0,444.0
+Tarapacá,2021-04-10,918.0,175.0
+Tarapacá,2021-05-02,382.0,-536.0
+Tarapacá,2021-05-03,465.0,83.0
+Tarapacá,2021-05-04,565.0,100.0
+Tarapacá,2021-05-07,819.0,254.0
+Tarapacá,2021-05-11,934.0,115.0
+Tarapacá,2021-06-08,876.0,-58.0
+Tarapacá,2021-06-09,902.0,26.0
+Tarapacá,2021-06-12,947.0,45.0
+Tarapacá,2021-07-05,676.0,-271.0
+Tarapacá,2021-07-06,751.0,75.0
+Valparaíso,2020-01-07,272.0,0.0
+Valparaíso,2020-02-10,942.0,670.0
+Valparaíso,2020-02-11,1149.0,207.0
+Valparaíso,2020-03-08,550.0,-599.0
+Valparaíso,2020-04-09,774.0,224.0
+Valparaíso,2020-04-12,1254.0,480.0
+Valparaíso,2020-05-07,331.0,-923.0
+Valparaíso,2020-05-10,967.0,636.0
+Valparaíso,2020-06-11,1164.0,197.0
+Valparaíso,2020-07-08,575.0,-589.0
+Valparaíso,2020-07-09,801.0,226.0
+Valparaíso,2020-07-12,1264.0,463.0
+Valparaíso,2020-09-10,992.0,-272.0
+Valparaíso,2020-09-11,1173.0,181.0
+Valparaíso,2020-10-07,374.0,-799.0
+Valparaíso,2020-10-08,598.0,224.0
+Valparaíso,2020-11-09,819.0,221.0
+Valparaíso,2020-11-12,1272.0,453.0
+Valparaíso,2020-12-06,114.0,-1158.0
+Valparaíso,2020-12-10,1016.0,902.0
+Valparaíso,2021-01-01,1357.0,341.0
+Valparaíso,2021-01-02,1518.0,161.0
+Valparaíso,2021-01-03,1753.0,235.0
+Valparaíso,2021-01-10,4346.0,2593.0
+Valparaíso,2021-01-11,4494.0,148.0
+Valparaíso,2021-02-04,2275.0,-2219.0
+Valparaíso,2021-02-07,3577.0,1302.0
+Valparaíso,2021-02-08,3981.0,404.0
+Valparaíso,2021-03-05,2699.0,-1282.0
+Valparaíso,2021-03-09,4221.0,1522.0
+Valparaíso,2021-03-12,4654.0,433.0
+Valparaíso,2021-04-01,1360.0,-3294.0
+Valparaíso,2021-04-06,3133.0,1773.0
+Valparaíso,2021-04-10,4359.0,1226.0
+Valparaíso,2021-05-02,1549.0,-2810.0
+Valparaíso,2021-05-03,1812.0,263.0
+Valparaíso,2021-05-04,2321.0,509.0
+Valparaíso,2021-05-07,3644.0,1323.0
+Valparaíso,2021-05-11,4505.0,861.0
+Valparaíso,2021-06-08,4009.0,-496.0
+Valparaíso,2021-06-09,4240.0,231.0
+Valparaíso,2021-06-12,4674.0,434.0
+Valparaíso,2021-07-05,2750.0,-1924.0
+Valparaíso,2021-07-06,3185.0,435.0
+Ñuble,2020-01-07,39.0,0.0
+Ñuble,2020-02-10,119.0,80.0
+Ñuble,2020-02-11,156.0,37.0
+Ñuble,2020-03-08,63.0,-93.0
+Ñuble,2020-04-09,81.0,18.0
+Ñuble,2020-04-12,187.0,106.0
+Ñuble,2020-05-07,42.0,-145.0
+Ñuble,2020-05-10,122.0,80.0
+Ñuble,2020-06-11,160.0,38.0
+Ñuble,2020-07-08,68.0,-92.0
+Ñuble,2020-07-09,84.0,16.0
+Ñuble,2020-07-12,187.0,103.0
+Ñuble,2020-09-10,124.0,-63.0
+Ñuble,2020-09-11,162.0,38.0
+Ñuble,2020-10-07,46.0,-116.0
+Ñuble,2020-10-08,69.0,23.0
+Ñuble,2020-11-09,90.0,21.0
+Ñuble,2020-11-12,193.0,103.0
+Ñuble,2020-12-06,20.0,-173.0
+Ñuble,2020-12-10,129.0,109.0
+Ñuble,2021-01-01,224.0,95.0
+Ñuble,2021-01-02,276.0,52.0
+Ñuble,2021-01-03,339.0,63.0
+Ñuble,2021-01-10,808.0,469.0
+Ñuble,2021-01-11,845.0,37.0
+Ñuble,2021-02-04,498.0,-347.0
+Ñuble,2021-02-07,677.0,179.0
+Ñuble,2021-02-08,746.0,69.0
+Ñuble,2021-03-05,510.0,-236.0
+Ñuble,2021-03-09,777.0,267.0
+Ñuble,2021-03-12,895.0,118.0
+Ñuble,2021-04-01,226.0,-669.0
+Ñuble,2021-04-06,600.0,374.0
+Ñuble,2021-04-10,811.0,211.0
+Ñuble,2021-05-02,287.0,-524.0
+Ñuble,2021-05-03,371.0,84.0
+Ñuble,2021-05-04,505.0,134.0
+Ñuble,2021-05-07,689.0,184.0
+Ñuble,2021-05-11,850.0,161.0
+Ñuble,2021-06-08,751.0,-99.0
+Ñuble,2021-06-09,778.0,27.0
+Ñuble,2021-06-12,900.0,122.0
+Ñuble,2021-07-05,519.0,-381.0
+Ñuble,2021-07-06,612.0,93.0

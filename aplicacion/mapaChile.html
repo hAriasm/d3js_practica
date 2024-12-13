@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map of Chile by Region</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        .region {
+            stroke: #000;
+            stroke-width: 0.5px;
+        }
+        .tooltip {
+            position: absolute;
+            text-align: center;
+            width: 200px;
+            padding: 8px;
+            font: 12px sans-serif;
+            background: lightsteelblue;
+            border: 0px;
+            border-radius: 8px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body style="background-color: white;">
+    <div id="map"></div>
+    <script>
+        const width = 800;
+        const height = 1200;
+
+        const projection = d3.geoMercator()
+            .scale(1500)
+            .center([-72, -38])
+            .translate([width / 2, height / 2]);
+
+        const path = d3.geoPath().projection(projection);
+
+        const svg = d3.select("#map").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        const tooltip = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
+        // Helper function to normalize names
+        function normalizeName(name) {
+            return name
+                .toLowerCase()
+                .normalize("NFD") // Remove accents
+                .replace(/[̀-ͯ]/g, "") // Remove diacritics
+                .replace(/[^a-z0-9]/g, ""); // Remove special characters
+        }
+
+        // Load map data and external datasets
+        d3.json("data/regiones_edit.geojson").then(function(data) {
+            if (!data.features || data.features.length === 0) {
+                console.error('GeoJSON data is empty or not formatted correctly.');
+                return;
+            }
+
+            // Load the CSV files with mobility, deaths, and population data
+            Promise.all([
+                d3.csv("data/Movilidad_Grouped.csv"),
+                d3.csv("data/Fallecidos_Grouped.csv"),
+                d3.csv("data/population_by_region.csv")
+            ]).then(function([mobilityData, deathsData, populationData]) {
+
+                // Normalize names in population data
+                populationData.forEach(p => p.Region = normalizeName(p.Region));
+
+                // Normalize names in mobility data
+                mobilityData.forEach(m => m.Region = normalizeName(m.Region));
+
+                // Normalize names in deaths data
+                deathsData.forEach(f => f.Region = normalizeName(f.Region));
+
+                // Create a color scale for population
+                const populationValues = populationData.map(d => +d.Poblacion);
+                const colorScale = d3.scaleSequential(d3.interpolateCool)
+                    .domain([d3.min(populationValues), d3.max(populationValues)]);
+
+                // Draw map
+                svg.selectAll(".region")
+                    .data(data.features)
+                    .enter().append("path")
+                    .attr("class", "region")
+                    .attr("d", path)
+                    .attr("fill", function(d) {
+                        const regionName = normalizeName(d.properties.Region);
+                        const populationRegionData = populationData.find(p => p.Region === regionName);
+                        if (populationRegionData) {
+                            return colorScale(+populationRegionData.Poblacion);
+                        }
+                        return "#f0f0f0"; // Default color if no data
+                    })
+                    .on("mouseover", function(event, d) {
+                        const regionName = normalizeName(d.properties.Region);
+
+                        let tooltipContent = `<strong>Región:</strong> ${d.properties.Region}<br>`;
+
+                        // Add population
+                        const populationRegionData = populationData.find(p => p.Region === regionName);
+                        if (populationRegionData) {
+                            tooltipContent += `<strong>Población:</strong> ${populationRegionData.Poblacion}<br>`;
+                        }
+
+                        // Add mobility
+                        const mobilityRegionData = mobilityData.filter(m => m.Region === regionName);
+                        if (mobilityRegionData.length > 0) {
+                            const latestMobility = mobilityRegionData[mobilityRegionData.length - 1];
+                            tooltipContent += `<strong>Movilidad Interna:</strong> ${latestMobility.IM_interno}<br>`;
+                            tooltipContent += `<strong>Movilidad Externa:</strong> ${latestMobility.IM_externo}<br>`;
+                        }
+
+                        // Add deaths
+                        const deathsRegionData = deathsData.filter(f => f.Region === regionName);
+                        if (deathsRegionData.length > 0) {
+                            const latestDeaths = deathsRegionData[deathsRegionData.length - 1];
+                            tooltipContent += `<strong>Fallecidos:</strong> ${latestDeaths.Fallecidos}<br>`;
+                        }
+
+                        tooltip.transition().duration(200).style("opacity", 0.9);
+                        tooltip.html(tooltipContent)
+                            .style("left", (event.pageX + 5) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function() {
+                        tooltip.transition().duration(500).style("opacity", 0);
+                    });
+
+            }).catch(function(error) {
+                console.error('Error loading datasets:', error);
+            });
+        }).catch(function(error) {
+            console.error('Error loading GeoJSON data:', error);
+        });
+    </script>
+</body>
+</html>

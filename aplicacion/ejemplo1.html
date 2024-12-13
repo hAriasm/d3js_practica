@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Casos Confirmados por Región y Fecha</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        svg text {
+            font-family: Arial, sans-serif;
+        }
+        rect:hover {
+            fill: orange;
+        }
+    </style>
+</head>
+<body>
+    <h2>Casos Confirmados por Región</h2>
+    <svg id="barChart" width="800" height="500"></svg>
+
+    <h2>Casos Confirmados por Fecha</h2>
+    <svg id="lineChart" width="800" height="400"></svg>
+
+    <h2>Casos Confirmados por Fecha (Serie Histórica)</h2>
+    <svg id="lineChartHistorical" width="800" height="400"></svg>
+
+    <script>
+        // Carga el archivo JSON para el gráfico de barras
+        d3.json("cases_by_region.json").then(data => {
+            // Dimensiones y margen
+            const margin = {top: 40, right: 30, bottom: 100, left: 60};
+            const width = 800 - margin.left - margin.right;
+            const height = 500 - margin.top - margin.bottom;
+
+            const svg = d3.select("#barChart")
+                          .attr("width", width + margin.left + margin.right)
+                          .attr("height", height + margin.top + margin.bottom)
+                          .append("g")
+                          .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            // Escalas
+            const x = d3.scaleBand()
+                        .domain(data.map(d => d.Region))
+                        .range([0, width])
+                        .padding(0.2);
+            const y = d3.scaleLinear()
+                        .domain([0, d3.max(data, d => d["Casos confirmados"])]).nice()
+                        .range([height, 0]);
+
+            // Ejes
+            svg.append("g")
+               .attr("transform", `translate(0,${height})`)
+               .call(d3.axisBottom(x))
+               .selectAll("text")
+               .attr("transform", "rotate(-45)")
+               .style("text-anchor", "end");
+            
+            svg.append("g")
+               .call(d3.axisLeft(y));
+
+            // Título del eje X
+            svg.append("text")
+               .attr("x", width / 2)
+               .attr("y", height + margin.bottom - 50)
+               .attr("text-anchor", "middle")
+               .attr("font-size", "14px")
+               .text("Región");
+
+            // Título del eje Y
+            svg.append("text")
+               .attr("transform", "rotate(-90)")
+               .attr("x", -height / 2)
+               .attr("y", -margin.left + 15)
+               .attr("text-anchor", "middle")
+               .attr("font-size", "14px")
+               .text("Casos Confirmados");
+
+            // Barras
+            svg.selectAll("bars")
+               .data(data)
+               .enter()
+               .append("rect")
+               .attr("x", d => x(d.Region))
+               .attr("y", d => y(d["Casos confirmados"]))
+               .attr("width", x.bandwidth())
+               .attr("height", d => height - y(d["Casos confirmados"]))
+               .attr("fill", "steelblue");
+        }).catch(error => {
+            console.error("Error al cargar el archivo JSON: ", error);
+        });
+
+        // Carga el archivo JSON para el gráfico de línea
+        d3.json("cases_by_date.json").then(data => {
+            // Formatea la fecha y establece dimensiones
+            const parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S");
+            data.forEach(d => { d.Fecha = parseDate(d.Fecha); });
+            const margin = {top: 20, right: 30, bottom: 30, left: 50};
+            const width = 800 - margin.left - margin.right;
+            const height = 400 - margin.top - margin.bottom;
+
+            const svg = d3.select("#lineChart")
+                          .attr("width", width + margin.left + margin.right)
+                          .attr("height", height + margin.top + margin.bottom)
+                          .append("g")
+                          .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            // Escalas
+            const x = d3.scaleTime()
+                        .domain(d3.extent(data, d => d.Fecha))
+                        .range([0, width]);
+            const y = d3.scaleLinear()
+                        .domain([0, d3.max(data, d => d["Casos confirmados"])]).nice()
+                        .range([height, 0]);
+
+            // Ejes
+            svg.append("g")
+               .attr("transform", `translate(0,${height})`)
+               .call(d3.axisBottom(x));
+            
+            svg.append("g")
+               .call(d3.axisLeft(y));
+
+            // Línea
+            const line = d3.line()
+                           .x(d => x(d.Fecha))
+                           .y(d => y(d["Casos confirmados"]));
+
+            svg.append("path")
+               .datum(data)
+               .attr("fill", "none")
+               .attr("stroke", "steelblue")
+               .attr("stroke-width", 1.5)
+               .attr("d", line);
+        }).catch(error => {
+            console.error("Error al cargar el archivo JSON: ", error);
+        });
+
+        // Gráfico de línea para los datos proporcionados
+        const providedData = [
+            {"Fecha": "2020-03-30 00:00:00", "Casos confirmados": 1937.0},
+            {"Fecha": "2020-04-01 00:00:00", "Casos confirmados": 2817.0},
+            {"Fecha": "2020-04-03 00:00:00", "Casos confirmados": 3515.0},
+            // ... (otros datos proporcionados)
+            {"Fecha": "2023-01-09 00:00:00", "Casos confirmados": 5404410.0}
+        ];
+
+        // Formatea la fecha y establece dimensiones
+        const parseDateHistorical = d3.timeParse("%Y-%m-%d %H:%M:%S");
+        providedData.forEach(d => { d.Fecha = parseDateHistorical(d.Fecha); });
+        const marginHistorical = {top: 20, right: 30, bottom: 30, left: 50};
+        const widthHistorical = 800 - marginHistorical.left - marginHistorical.right;
+        const heightHistorical = 400 - marginHistorical.top - marginHistorical.bottom;
+
+        const svgHistorical = d3.select("#lineChartHistorical")
+                              .attr("width", widthHistorical + marginHistorical.left + marginHistorical.right)
+                              .attr("height", heightHistorical + marginHistorical.top + marginHistorical.bottom)
+                              .append("g")
+                              .attr("transform", `translate(${marginHistorical.left},${marginHistorical.top})`);
+
+        // Escalas
+        const xHistorical = d3.scaleTime()
+                            .domain(d3.extent(providedData, d => d.Fecha))
+                            .range([0, widthHistorical]);
+        const yHistorical = d3.scaleLinear()
+                            .domain([0, d3.max(providedData, d => d["Casos confirmados"])]).nice()
+                            .range([heightHistorical, 0]);
+
+        // Ejes
+        svgHistorical.append("g")
+                   .attr("transform", `translate(0,${heightHistorical})`)
+                   .call(d3.axisBottom(xHistorical));
+        
+        svgHistorical.append("g")
+                   .call(d3.axisLeft(yHistorical));
+
+        // Línea
+        const lineHistorical = d3.line()
+                               .x(d => xHistorical(d.Fecha))
+                               .y(d => yHistorical(d["Casos confirmados"]));
+
+        svgHistorical.append("path")
+                   .datum(providedData)
+                   .attr("fill", "none")
+                   .attr("stroke", "steelblue")
+                   .attr("stroke-width", 1.5)
+                   .attr("d", lineHistorical);
+    </script>
+</body>
+</html>
