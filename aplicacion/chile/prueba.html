@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa Interactivo de Población en Chile</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    .region {
+      stroke: #000;
+      stroke-width: 0.5;
+    }
+    .tooltip {
+      position: absolute;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 5px;
+      border-radius: 3px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div class="tooltip" style="opacity: 0;"></div>
+  
+  <script>
+    const width = 800;
+    const height = 1400;
+
+    // Datos de población por región
+    const data = [
+      { Region: 'Región de Antofagasta', Poblacion: 265671936.0 },
+      { Region: 'Región de Arica y Parinacota', Poblacion: 96810240.0 },
+      { Region: 'Región de Atacama', Poblacion: 120848256.0 },
+      { Region: 'Región de Aysén del Gral.Ibáñez del Campo', Poblacion: 40948224.0 },
+      { Region: 'Región del Bío-Bío', Poblacion: 638859264.0 },
+      { Region: 'Región de Coquimbo', Poblacion: 321060864.0 },
+      { Region: 'Región de La Araucanía', Poblacion: 389507712.0 },
+      { Region: "Región del Libertador Bernardo O'Higgins", Poblacion: 380568192.0 },
+      { Region: 'Región de Los Lagos', Poblacion: 342312960.0 },
+      { Region: 'Región de Los Ríos', Poblacion: 155840640.0 },
+      { Region: 'Región de Magallanes y Antártica Chilena', Poblacion: 68422536.0 },
+      { Region: 'Región del Maule', Poblacion: 434664576.0 },
+      { Region: 'Región Metropolitana de Santiago', Poblacion: 3120027648.0 },
+      { Region: 'Región de Tarapacá', Poblacion: 146984832.0 },
+      { Region: 'Región de Valparaíso', Poblacion: 752639168.0 },
+      { Region: 'Región de Ñuble', Poblacion: 196435584.0 }
+    ];
+
+    // Normalizar los nombres (quitar tildes y ajustar espacios)
+    const normalizeName = name =>
+      name
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "") // Remover tildes
+        .replace(/\s+/g, ' ') // Eliminar espacios extra
+        .trim();
+
+    // Crear SVG
+    const svg = d3.select("#map")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height);
+
+    const projection = d3.geoMercator()
+      .center([-71.5, -35])
+      .scale(1200)
+      .translate([width / 2, height / 2]);
+
+    const path = d3.geoPath().projection(projection);
+
+    // Escala de colores
+    const colorScale = d3.scaleSequential(d3.interpolateYlOrRd)
+      .domain([d3.min(data, d => d.Poblacion), d3.max(data, d => d.Poblacion)]);
+
+    // Tooltip
+    const tooltip = d3.select(".tooltip");
+
+    // Cargar GeoJSON y dibujar el mapa
+    d3.json("chile_regions.geojson").then(geojson => {
+      svg.selectAll("path")
+        .data(geojson.features)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .attr("class", "region")
+        .attr("fill", d => {
+          const regionName = normalizeName(d.properties.Region); // Se usa 'Region' como clave
+          const regionData = data.find(region => normalizeName(region.Region) === regionName);
+
+          // Asegurarse de que la región tiene datos de población válidos
+          return regionData && regionData.Poblacion > 0
+            ? colorScale(regionData.Poblacion)
+            : "#ccc"; // Asignar un color gris si no tiene datos de población válidos
+        })
+        .on("mouseover", (event, d) => {
+          const regionName = normalizeName(d.properties.Region); // Se usa 'Region' como clave
+          const regionData = data.find(region => normalizeName(region.Region) === regionName);
+
+          if (regionData) {
+            tooltip.style("opacity", 1)
+              .html(`
+                <strong>Región:</strong> ${d.properties.Region}<br>
+                <strong>Población:</strong> ${regionData.Poblacion.toLocaleString()}
+              `)
+              .style("left", (event.pageX + 10) + "px")
+              .style("top", (event.pageY + 10) + "px");
+          } else {
+            tooltip.style("opacity", 0);
+          }
+        })
+        .on("mousemove", event => {
+          tooltip.style("left", (event.pageX + 10) + "px")
+                 .style("top", (event.pageY + 10) + "px");
+        })
+        .on("mouseout", () => tooltip.style("opacity", 0));
+    });
+  </script>
+</body>
+</html>
+
