@@ -64,8 +64,8 @@
       .attr("height", height);
 
     const projection = d3.geoMercator()
-      .center([-71.5, -35])
-      .scale(1200)
+      .center([-71.5, -52])
+      .scale(900)
       .translate([width / 2, height / 2]);
 
     const path = d3.geoPath().projection(projection);
@@ -78,15 +78,18 @@
     const tooltip = d3.select(".tooltip");
 
     // Cargar GeoJSON y dibujar el mapa
-    d3.json("chile_regions.geojson").then(geojson => {
+    d3.json("regiones-chile.json").then(geojson => {
       svg.selectAll("path")
-        .data(geojson.features)
+        .data(geojson.features.filter(d => {
+          const regionName = normalizeName(d.properties.Region || "");
+          return data.some(region => normalizeName(region.Region) === regionName);
+        }))
         .enter()
         .append("path")
         .attr("d", path)
         .attr("class", "region")
         .attr("fill", d => {
-          const regionName = normalizeName(d.properties.Region); // Se usa 'Region' como clave
+          const regionName = normalizeName(d.properties.Region || ""); // Se usa 'Region' como clave
           const regionData = data.find(region => normalizeName(region.Region) === regionName);
 
           // Asegurarse de que la región tiene datos de población válidos
