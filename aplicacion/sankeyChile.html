@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Diagrama de Sankey Filtrado por Comunidades</title>
+    <!-- Cargar D3.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.7.0/d3.min.js"></script>
+    <!-- Cargar la librería d3-sankey -->
+    <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+    <style>
+        svg {
+            border: 1px solid lightgray;
+        }
+        .link {
+            fill: none;
+            stroke-opacity: 0.5;
+        }
+        .node rect {
+            stroke: #000;
+        }
+        .node text {
+            font-size: 12px;
+            fill: black;
+            pointer-events: none;
+        }
+        select {
+            width: 200px;
+            height: 100px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Diagrama de Sankey Filtrado por Comunidades</h3>
+
+    <label for="startDate">Fecha Inicio:</label>
+    <select id="startDate"></select>
+
+    <label for="endDate">Fecha Fin:</label>
+    <select id="endDate"></select>
+
+    <label for="originFilter">Filtrar por Origen:</label>
+    <select id="originFilter" multiple></select>
+
+    <label for="destinationFilter">Filtrar por Destino:</label>
+    <select id="destinationFilter" multiple></select>
+
+    <svg width="1200" height="800"></svg>
+
+    <script>
+        const svg = d3.select("svg"),
+              width = +svg.attr("width"),
+              height = +svg.attr("height");
+
+        const sankey = d3.sankey()
+            .size([width, height])
+            .nodeWidth(30)
+            .nodePadding(15);
+
+        let cleanData = [];
+
+        function drawSankey(graph) {
+            svg.selectAll("*").remove();
+
+            try {
+                const sankeyGraph = sankey({
+                    nodes: graph.nodes.map(d => Object.assign({}, d)),
+                    links: graph.links
+                });
+
+                drawLinksAndNodes(sankeyGraph);
+            } catch (error) {
+                console.error("Error al generar el layout de Sankey:", error);
+                svg.append("text")
+                    .attr("x", 20)
+                    .attr("y", 20)
+                    .text("Error al generar el gráfico.")
+                    .style("fill", "red");
+            }
+        }
+
+        function drawLinksAndNodes(sankeyGraph) {
+            const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+
+            svg.append("g")
+                .attr("class", "links")
+                .selectAll("path")
+                .data(sankeyGraph.links)
+                .enter().append("path")
+                .attr("class", "link")
+                .attr("d", d3.sankeyLinkHorizontal())
+                .attr("stroke-width", d => Math.max(1, d.width))
+                .attr("stroke", d => colorScale(d.source.name + d.target.name))
+                .append("title")
+                .text(d => `${d.source.name} → ${d.target.name}\nCantidad: ${d.value}`);
+
+            const node = svg.append("g")
+                .attr("class", "nodes")
+                .selectAll("g")
+                .data(sankeyGraph.nodes)
+                .enter().append("g");
+
+            node.append("rect")
+                .attr("x", d => d.x0)
+                .attr("y", d => d.y0)
+                .attr("height", d => d.y1 - d.y0)
+                .attr("width", sankey.nodeWidth())
+                .style("fill", d => colorScale(d.name))
+                .style("stroke", "#000");
+
+            node.append("text")
+                .attr("x", d => d.x1 + 6)
+                .attr("y", d => (d.y1 + d.y0) / 2)
+                .attr("dy", "0.35em")
+                .style("text-anchor", "start")
+                .text(d => d.name);
+        }
+
+        function updateSankeyRange(start, end, selectedOrigins, selectedDestinations, data) {
+            const filteredData = data.filter(d => {
+                const inDateRange = d.Fecha >= start && d.Fecha <= end;
+                const matchesOrigin = selectedOrigins.length === 0 || selectedOrigins.includes(d.Origen);
+                const matchesDestination = selectedDestinations.length === 0 || selectedDestinations.includes(d.Destino);
+                return inDateRange && matchesOrigin && matchesDestination;
+            });
+
+            const grouped = {};
+            filteredData.forEach(d => {
+                const key = d.Origen + "||" + d.Destino;
+                if (!grouped[key]) grouped[key] = 0;
+                grouped[key] += d.Viajes;
+            });
+
+            const nodeSet = new Set();
+            for (const key in grouped) {
+                const [ori, des] = key.split("||");
+                nodeSet.add(ori);
+                nodeSet.add(des);
+            }
+
+            const nodes = Array.from(nodeSet).map(name => ({ name }));
+            const nodeIndex = Object.fromEntries(nodes.map((node, i) => [node.name, i]));
+
+            const links = Object.entries(grouped).map(([key, value]) => {
+                const [ori, des] = key.split("||");
+                return {
+                    source: nodeIndex[ori],
+                    target: nodeIndex[des],
+                    value: value
+                };
+            });
+
+            drawSankey({ nodes, links });
+        }
+
+        d3.csv("data/ViajesComunas_limpio_sin_ciclos.csv").then(rawData => {
+            cleanData = rawData.map(d => ({
+                Fecha: d.Fecha?.trim(),
+                Origen: d.Origen?.trim(),
+                Destino: d.Destino?.trim(),
+                Viajes: +d.Viajes
+            })).filter(d => d.Fecha && d.Origen && d.Destino && d.Viajes > 0);
+
+            const dates = Array.from(new Set(cleanData.map(d => d.Fecha))).sort();
+            const origins = Array.from(new Set(cleanData.map(d => d.Origen))).sort();
+            const destinations = Array.from(new Set(cleanData.map(d => d.Destino))).sort();
+
+            const startDateSelect = d3.select("#startDate");
+            const endDateSelect = d3.select("#endDate");
+            const originFilter = d3.select("#originFilter");
+            const destinationFilter = d3.select("#destinationFilter");
+
+            startDateSelect.selectAll("option")
+                .data(dates)
+                .enter()
+                .append("option")
+                .attr("value", d => d)
+                .text(d => d);
+
+            endDateSelect.selectAll("option")
+                .data(dates)
+                .enter()
+                .append("option")
+                .attr("value", d => d)
+                .text(d => d);
+
+            originFilter.selectAll("option")
+                .data(origins)
+                .enter()
+                .append("option")
+                .attr("value", d => d)
+                .text(d => d);
+
+            destinationFilter.selectAll("option")
+                .data(destinations)
+                .enter()
+                .append("option")
+                .attr("value", d => d)
+                .text(d => d);
+
+            startDateSelect.property("value", dates[0]);
+            endDateSelect.property("value", dates[dates.length - 1]);
+
+            updateSankeyRange(dates[0], dates[dates.length - 1], [], [], cleanData);
+
+            function onFiltersChange() {
+                const start = startDateSelect.property("value");
+                const end = endDateSelect.property("value");
+                const selectedOrigins = Array.from(originFilter.property("selectedOptions"), d => d.value);
+                const selectedDestinations = Array.from(destinationFilter.property("selectedOptions"), d => d.value);
+                if (start > end) return;
+                updateSankeyRange(start, end, selectedOrigins, selectedDestinations, cleanData);
+            }
+
+            startDateSelect.on("change", onFiltersChange);
+            endDateSelect.on("change", onFiltersChange);
+            originFilter.on("change", onFiltersChange);
+            destinationFilter.on("change", onFiltersChange);
+        });
+    </script>
+</body>
+</html>
